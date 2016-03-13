@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  {% include head.html %}
+  </head>
+  <body id="{{ page.slug }}" class="container-fluid">
+    <header>
+      <div class="container-fluid">
+        <img class="logo animated fadeIn" src="{{ site.baseurl }}/assets/svg/logo.svg">
+      </div>
+    </header>
+    <main id="superBowl">
+    {{ content }}
+    </main>
+    {% include footer.html %}
+  </body>
+</html>

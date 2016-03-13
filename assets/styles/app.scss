@@ -1,0 +1,59 @@
+// Imports
+@import 'base';
+@import 'type';
+.ScrollSceneIndicators { z-index: 9999999 !important; }
+
+header {
+  text-align: left;
+  padding-top: 2rem;
+  padding-right: 0;
+  padding-bottom: 2rem;
+  padding-left: 0;
+  position: relative;
+
+  .logo {
+    display: inline-block;
+    width: 12.5rem;
+    margin: 0 2rem;
+  }
+}
+
+/* Create scrolling area (imitates height of a page) */
+main {
+  height: 7600px;
+
+  .title-scene {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    .animation {
+      display: block;
+      transform: matrix(0, 0, 0, 0, 0, 0);
+      opacity: 0;
+    }
+  }
+
+  .stadium-scene {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    .animation {
+      display: block;
+    }
+  }
+
+  .scoreboard-scene {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    transform: translateY(-45%);
+
+    .animation {
+      display: block;
+    }
+  }
+}
+
+#field {
+  margin-top: -15%;
+  background-color: #2BB673;
+}
