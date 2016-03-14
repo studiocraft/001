@@ -20,8 +20,9 @@
       init: function() {
         // JavaScript to be fired on all pages
         var scrollController = new ScrollMagic();
+        var titleHeight = $('#titleAnimation').height();
         var titleTween = TweenMax.fromTo('#titleAnimation', 0.8, {css:{ transform: 'scale(0)', opacity: 0 }}, {css:{ transform: 'scale(1)', opacity: 1}});
-        var titleScene = new ScrollScene({triggerElement: '#titleScene', offset: 320})
+        var titleScene = new ScrollScene({triggerElement: '#titleScene', offset: titleHeight/2})
           .setClassToggle('body', 'titleScene_active')
           .setTween(titleTween)
           .addTo(scrollController);
