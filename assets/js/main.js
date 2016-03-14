@@ -19,68 +19,74 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
-        var scrollMagicController = new ScrollMagic();
+        var scrollController = new ScrollMagic();
+        var titleTween = TweenMax.fromTo('#titleAnimation', 0.8, {css:{ transform: 'scale(0)', opacity: 0 }}, {css:{ transform: 'scale(1)', opacity: 1}});
+        var titleScene = new ScrollScene({triggerElement: '#titleScene', offset: 240})
+          .setClassToggle('body', 'titleScene_active')
+          .setTween(titleTween)
+          .addTo(scrollController);
 
-        var titleTween = TweenMax.to('#titleAnimation', 0.8, {
-          opacity: 1,
-          scale: 1,
-        });
-        var titleScene = new ScrollScene({
-          triggerElement: '#titleScene',
-            offset: 240
-        })
-        .setClassToggle('body', 'titleScene_active')
-        .setTween(titleTween)
-        .addTo(scrollMagicController);
+        var stadiumTween = TweenMax.staggerFromTo('[data-name="light"]', 0.5, {css:{fill: '#ffffff'}}, {css:{fill: 'transparent'}, repeat: 3, yoyo: true }, 1);
+        var stadiumScene = new ScrollScene({triggerElement: '#stadiumScene', offset: -240, duration: 760})
+          .setClassToggle('body', 'stadiumScene_active')
+          .setTween(stadiumTween)
+          .addTo(scrollController);
 
-        var stadiumTween = TweenMax.to('#stadiumAnimation', 0.4, {
-          opacity: 1
-        });
+        var scoreboardTween = TweenMax.fromTo('#scoreboardAnimation', 1.4, {css:{transform: 'translateY(100px)', opacity: 0}}, {css:{transform: 'translateY(0px)', opacity: 1}});
+        var scoreboardScene = new ScrollScene({triggerElement: '#scoreboardScene', offset: -120})
+          .setClassToggle('body', 'scoreboardScene_active')
+          .setTween(scoreboardTween)
+          .addTo(scrollController);
 
-        var flashTween = TweenMax.staggerFromTo('[data-name="light"]', 0.5, {
-          fill: '#ffffff'
-        },
-        {
-          fill: 'transparent',
-          repeat: 3,
-          yoyo: true
-        },
-          1
-        );
+        var placeholderOneTween = TweenMax.fromTo('#placeholderOneAnimation', 0.8, { css:{transform: 'translateX(0px) scale(1)', opacity: 1}}, {css:{transform: 'translateX(-420px) scale(.5)', opacity: 0}});
+        var placeholderOneScene = new ScrollScene({ triggerElement: '#placeholderOneScene', offset: 320, duration: 360})
+          .setClassToggle('body', 'placeholderOneScene_active')
+          .setTween(placeholderOneTween)
+          .addTo(scrollController);
 
-        var stadiumScene = new ScrollScene({
-          triggerElement: '#stadiumScene',
-          offset: -180,
-          duration: 460
-        })
-        .setClassToggle('body', 'stadiumScene_active')
-        .setTween(flashTween)
-        .addTo(scrollMagicController);
+        var placeholderTwoTween = TweenMax.fromTo('#placeholderTwoAnimation', 0.8, { css:{transform: 'translateX(0px) scale(1)', opacity: 1}}, {css:{transform: 'translateX(-420px) scale(.5)', opacity: 0}});
+        var placeholderTwoScene = new ScrollScene({ triggerElement: '#placeholderTwoScene', offset: 320, duration: 360})
+          .setClassToggle('body', 'placeholderTwoScene_active')
+          .setTween(placeholderTwoTween)
+          .addTo(scrollController);
 
-        var scoreboardTween = TweenMax.fromTo('#scoreboardAnimation', 1.4, {
-          css:{
-            transform: 'translateY(100px)',
-            opacity: 0
-          }
-        },
-        {
-          css:{
-            transform: 'translateY(0px)',
-            opacity: 1
-          }
-        });
+        var placeholderThreeTween = TweenMax.fromTo('#placeholderThreeAnimation', 0.8, { css:{transform: 'translateX(0px) scale(1)', opacity: 1}}, {css:{transform: 'translateX(-420px) scale(.5)', opacity: 0}});
+        var placeholderThreeScene = new ScrollScene({ triggerElement: '#placeholderThreeScene', offset: 320, duration: 360})
+          .setClassToggle('body', 'placeholderThreeScene_active')
+          .setTween(placeholderThreeTween)
+          .addTo(scrollController);
 
-        var scoreboardScene = new ScrollScene({
-          triggerElement: '#scoreboardScene',
-          offset: -100,
-        })
-        .setClassToggle('body', 'scoreboardScene_active')
-        .setTween(scoreboardTween)
-        .addTo(scrollMagicController);
+        var fiftyYardTween = TweenMax.fromTo('#fiftyYardAnimation', 1.4, {css:{transform: 'translateY(240px)', opacity: 0}}, {css:{transform: 'translateY(-120px)', opacity: 1}});
+        var fiftyYardScene = new ScrollScene({triggerElement: '#fiftyYardScene', offset: -240})
+          .setClassToggle('body', 'fiftyYardScene_active')
+          .setTween(fiftyYardTween)
+          .addTo(scrollController);
+
+        var thirtyYardTween = TweenMax.fromTo('#thirtyYardAnimation', 1.4, {css:{transform: 'translateY(240px)', opacity: 0}}, {css:{transform: 'translateY(-120px)', opacity: 1}});
+        var thirtyYardScene = new ScrollScene({triggerElement: '#thirtyYardScene', offset: -240})
+          .setClassToggle('body', 'thirtyYardScene_active')
+          .setTween(thirtyYardTween)
+          .addTo(scrollController);
+
+        var tenYardTween = TweenMax.fromTo('#tenYardAnimation', 1.4, {css:{transform: 'translateY(240px)', opacity: 0}}, {css:{transform: 'translateY(-120px)', opacity: 1}});
+        var tenYardScene = new ScrollScene({triggerElement: '#tenYardScene', offset: -240})
+          .setClassToggle('body', 'tenYardScene_active')
+          .setTween(tenYardTween)
+          .addTo(scrollController);
+
         // Add debug indicators fixed on right side
         titleScene.addIndicators();
         stadiumScene.addIndicators();
         scoreboardScene.addIndicators();
+
+        placeholderOneScene.addIndicators();
+        placeholderTwoScene.addIndicators();
+        placeholderThreeScene.addIndicators();
+
+        fiftyYardScene.addIndicators();
+        thirtyYardScene.addIndicators();
+        tenYardScene.addIndicators();
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

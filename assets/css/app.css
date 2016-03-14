@@ -6,140 +6,66 @@ body {
   margin: 0;
   padding: 0; }
 
-html {
-  font-family: "proxima-nova",sans-serif;
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.4; }
-  @media (min-width: 38em) {
-    html {
-      font-size: 1.4rem;
-      line-height: 1.8; } }
-
 body {
-  color: #FFD700;
-  background-color: #00AEEF; }
-
-a {
-  color: inherit;
-  text-decoration: none; }
-  a:hover, a:focus {
-    text-decoration: underline; }
-  a strong {
-    color: inherit; }
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  background-color: #00aeff;
+  font-size: 1.6rem; }
 
 img {
   display: block;
   max-width: 100%;
   margin: 0 auto; }
 
-table {
-  margin-bottom: 1rem;
-  width: 100%;
-  border: 1px solid #E5E5E5;
-  border-collapse: collapse; }
-
-td,
-th {
-  padding: .25rem .5rem;
-  border: 1px solid #e5e5e5; }
-
-tbody tr:nth-child(odd) td,
-tbody tr:nth-child(odd) th {
-  background-color: #f9f9f9; }
+footer {
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+  background-color: #ffd700;
+  color: #2b3990;
+  text-align: center; }
+  footer h1, footer h2, footer h3,
+  footer h4, footer h5, footer h6 {
+    color: inherit; }
+  footer svg {
+    padding-top: 4rem;
+    padding-bottom: 0;
+    width: 4rem; }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: .5rem;
+  color: #ffd700;
   font-weight: bold;
-  line-height: 1.25;
-  color: inherit;
+  letter-spacing: .2rem;
   text-rendering: optimizeLegibility; }
 
 h1 {
-  font-size: 2rem; }
+  font-size: 4.8rem;
+  margin: 2.4rem 0 1.2rem; }
 
 h2 {
-  margin-top: 1rem;
-  font-size: 1.5rem; }
+  font-size: 3.6rem;
+  margin: 1.8rem 0 1.2rem; }
 
 h3 {
-  margin-top: 1.5rem;
-  font-size: 1.25rem; }
+  font-size: 2.8rem;
+  margin: 1.4rem 0 1.2rem; }
 
-h4, h5, h6 {
-  margin-top: 1rem;
-  font-size: 1rem; }
+h4 {
+  font-size: 1.8rem;
+  margin: 1.2rem 0 0.8rem; }
+
+h5 {
+  font-size: 1.6rem;
+  margin: 1.2rem 0 0.8rem; }
+
+h6 {
+  font-size: 1.4rem;
+  margin: 0.8rem 0 0.4rem; }
 
 p {
-  margin-top: 0;
-  margin-bottom: 1rem; }
+  letter-spacing: .1rem; }
 
 small {
-  font-size: .8rem; }
-
-strong {
-  color: inherit; }
-
-ul, ol, dl {
-  color: #FF4136;
-  margin-top: 0;
-  margin-bottom: 1rem; }
-
-.inline {
-  list-style: none;
-  margin-left: -.4rem;
-  margin-right: 0;
-  margin-top: 1.6rem;
-  margin-bottom: 1.6rem;
-  padding: 0; }
-
-.inline > li {
-  display: inline-block;
-  padding-left: .4rem; }
-
-dt {
-  font-weight: bold; }
-
-dd {
-  margin-bottom: .5rem; }
-
-hr {
-  position: relative;
-  margin: 1.5rem auto;
-  border: 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #fff; }
-
-abbr {
-  font-size: 85%;
-  font-weight: bold;
-  color: #555;
-  text-transform: uppercase; }
-
-abbr[title] {
-  cursor: help;
-  border-bottom: 1px dotted #e5e5e5; }
-
-/* Quotes */
-blockquote {
-  padding: .5rem 1rem;
-  margin: .8rem 0;
-  color: #7a7a7a;
-  border-left: .25rem solid #e5e5e5; }
-  @media (min-width: 30em) {
-    blockquote {
-      padding-right: 5rem;
-      padding-left: 1.25rem; } }
-
-blockquote p:last-child {
-  margin-bottom: 0; }
-
-.lead {
-  font-size: 1.25rem;
-  font-weight: 300; }
-
-.ScrollSceneIndicators {
-  z-index: 9999999 !important; }
+  font-size: 80%; }
 
 header {
   text-align: left;
@@ -150,38 +76,90 @@ header {
   position: relative; }
   header .logo {
     display: inline-block;
-    width: 12.5rem;
-    margin: 0 2rem; }
+    width: 32rem; }
 
-/* Create scrolling area (imitates height of a page) */
-main {
-  height: 7600px; }
-  main .title-scene {
-    margin-top: 2rem;
-    margin-bottom: 2rem; }
-    main .title-scene .animation {
+main .title-scene .animation,
+main .stadium-scene .animation,
+main .scoreboard-scene .animation,
+main .placeholder-scene .animation {
+  display: block; }
+main .placeholder-scene .animation {
+  text-align: center;
+  color: #2b3990;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 0.1rem solid #2b3990;
+  height: 46rem;
+  padding: 2rem 0; }
+main .fifty-yard-scene .animation,
+main .thirty-yard-scene .animation,
+main .ten-yard-scene .animation,
+main .end-zone-scene .animation {
+  display: block; }
+main .end-zone-scene {
+  background-color: #2bb673;
+  background-image: -webkit-linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80), -webkit-linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80);
+  background-image: linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80), linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80);
+  background-size: 16rem 16rem;
+  background-position: 0 0, 8rem 8rem; }
+main .field {
+  background-color: #2bb673;
+  margin-top: -35%; }
+  main .field .yard-line {
+    border-top: 2rem solid #fff;
+    border-bottom: 0;
+    margin: 0;
+    color: #fff;
+    font-family: 'Ultra', serif;
+    letter-spacing: 1rem;
+    font-size: 10rem;
+    clear: both; }
+    main .field .yard-line::before {
+      float: right;
+      content: '';
+      -webkit-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+              transform: rotate(180deg);
+      height: 20rem;
+      -webkit-writing-mode: vertical-lr;
+          -ms-writing-mode: tb-lr;
+              writing-mode: vertical-lr;
+      clear: both; }
+  main .field .fifty::before {
+    content: '50'; }
+  main .field .thirty::before {
+    content: '30'; }
+  main .field .ten::before {
+    content: '10'; }
+  main .field .zero::before {
+    content: '0'; }
+  main .field .hash-line {
+    border-top: 0 solid transparent;
+    border-bottom: 0;
+    margin: 0;
+    padding: 0;
+    clear: both; }
+    main .field .hash-line::before {
+      float: left;
       display: block;
-      -webkit-transform: matrix(0, 0, 0, 0, 0, 0);
-          -ms-transform: matrix(0, 0, 0, 0, 0, 0);
-              transform: matrix(0, 0, 0, 0, 0, 0);
-      opacity: 0; }
-  main .stadium-scene {
-    margin-top: 2rem;
-    margin-bottom: 2rem; }
-    main .stadium-scene .animation {
-      display: block; }
-  main .scoreboard-scene {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    -webkit-transform: translateY(-45%);
-        -ms-transform: translateY(-45%);
-            transform: translateY(-45%); }
-    main .scoreboard-scene .animation {
-      display: block; }
-
-#field {
-  margin-top: -15%;
-  background-color: #2BB673; }
+      content: '';
+      width: 1.5rem;
+      border-top: 2rem solid #fff;
+      height: 20rem;
+      border-bottom: 2rem solid #fff;
+      margin-bottom: 20rem;
+      box-sizing: content-box;
+      clear: both; }
+    main .field .hash-line::after {
+      float: left;
+      display: block;
+      content: '';
+      width: 1.5rem;
+      border-top: 2rem solid #fff;
+      height: 20rem;
+      border-bottom: 2rem solid #fff;
+      margin-bottom: 20rem;
+      box-sizing: content-box;
+      clear: both; }
 
 
 
