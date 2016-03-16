@@ -73,7 +73,7 @@
 
           var heartGuyTween = new TimelineMax();
           heartGuyTween.add([
-            TweenMax.fromTo('[data-name="heart"]', 2.4, {css:{strokeWidth: '1rem', stroke: '#FF4338'}}, {css:{strokeWidth: '0', stroke: '#FF4338'}, repeat: -1, yoyo: true }, 1),
+            TweenMax.fromTo('[data-name="heart"]', 0.8, {css:{strokeWidth: '1rem', stroke: '#FF4338'}}, {css:{strokeWidth: '0', stroke: '#FF4338'}, repeat: -1, yoyo: true }, 1),
             TweenMax.fromTo('#heartGuyAnimation', 0.8, { css:{transform: 'translateX(420px)', opacity: 0}}, {css:{transform: 'translateX(0px)', opacity: 1}})
           ]);
           var heartGuyScene = new ScrollScene({ triggerElement: '#heartGuyScene', offset: 80})
