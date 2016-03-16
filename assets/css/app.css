@@ -81,20 +81,16 @@ header {
 main .title-scene .animation,
 main .stadium-scene .animation,
 main .scoreboard-scene .animation,
-main .placeholder-scene .animation {
-  display: block; }
-main .placeholder-scene .animation {
-  text-align: center;
-  color: #2b3990;
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 0.1rem solid #2b3990;
-  height: 46rem;
-  padding: 2rem 0; }
 main .fifty-yard-scene .animation,
+main .voice-guy-scene .animation,
 main .thirty-yard-scene .animation,
 main .ten-yard-scene .animation,
 main .end-zone-scene .animation {
   display: block; }
+main .voice-guy-scene,
+main .brain-guy-scene,
+main .heart-guy-scene {
+  margin-bottom: -5rem; }
 main .end-zone-scene {
   background-color: #2bb673;
   background-image: -webkit-linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80), -webkit-linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80);

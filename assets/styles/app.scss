@@ -28,25 +28,8 @@ main {
   .title-scene,
   .stadium-scene,
   .scoreboard-scene,
-  .placeholder-scene {
-
-    .animation {
-      display: block;
-    }
-  }
-
-  // Temporary
-  .placeholder-scene .animation {
-    text-align: center;
-    color: $purple;
-    background-color: transparentize($white, .8);
-    border: .1rem solid $purple;
-    height: 46rem;
-    padding: 2rem 0;
-  }
-  // End Temporary
-
   .fifty-yard-scene,
+  .voice-guy-scene,
   .thirty-yard-scene,
   .ten-yard-scene,
   .end-zone-scene {
@@ -54,6 +37,12 @@ main {
     .animation {
       display: block;
     }
+  }
+
+  .voice-guy-scene,
+  .brain-guy-scene,
+  .heart-guy-scene {
+    margin-bottom: -5rem;
   }
 
   .end-zone-scene {

@@ -39,28 +39,20 @@
           .setTween(scoreboardTween)
           .addTo(scrollController);
 
-        var placeholderOneTween = TweenMax.fromTo('#placeholderOneAnimation', 0.8, { css:{transform: 'translateX(0px) scale(1)', opacity: 1}}, {css:{transform: 'translateX(-420px) scale(.5)', opacity: 0}});
-        var placeholderOneScene = new ScrollScene({ triggerElement: '#placeholderOneScene', offset: 320, duration: 360})
-          .setClassToggle('body', 'placeholderOneScene_active')
-          .setTween(placeholderOneTween)
-          .addTo(scrollController);
-
-        var placeholderTwoTween = TweenMax.fromTo('#placeholderTwoAnimation', 0.8, { css:{transform: 'translateX(0px) scale(1)', opacity: 1}}, {css:{transform: 'translateX(-420px) scale(.5)', opacity: 0}});
-        var placeholderTwoScene = new ScrollScene({ triggerElement: '#placeholderTwoScene', offset: 320, duration: 360})
-          .setClassToggle('body', 'placeholderTwoScene_active')
-          .setTween(placeholderTwoTween)
-          .addTo(scrollController);
-
-        var placeholderThreeTween = TweenMax.fromTo('#placeholderThreeAnimation', 0.8, { css:{transform: 'translateX(0px) scale(1)', opacity: 1}}, {css:{transform: 'translateX(-420px) scale(.5)', opacity: 0}});
-        var placeholderThreeScene = new ScrollScene({ triggerElement: '#placeholderThreeScene', offset: 320, duration: 360})
-          .setClassToggle('body', 'placeholderThreeScene_active')
-          .setTween(placeholderThreeTween)
-          .addTo(scrollController);
-
-        var fiftyYardTween = TweenMax.fromTo('#fiftyYardAnimation', 1.4, {css:{transform: 'translateY(240px)', opacity: 0}}, {css:{transform: 'translateY(-120px)', opacity: 1}});
-        var fiftyYardScene = new ScrollScene({triggerElement: '#fiftyYardScene', offset: -240})
+        var fiftyYardTween = TweenMax.fromTo('#fiftyYardAnimation', 1.4, {css:{transform: 'translateX(-320px)', opacity: 0}}, {css:{transform: 'translateX(0px)', opacity: 1}});
+        var fiftyYardScene = new ScrollScene({triggerElement: '#fiftyYardScene', offset: -120})
           .setClassToggle('body', 'fiftyYardScene_active')
           .setTween(fiftyYardTween)
+          .addTo(scrollController);
+
+        var voiceGuyTween = new TimelineMax();
+        voiceGuyTween.add([
+          TweenMax.staggerFromTo('[data-name="comment"]', 0.5, {css:{fill: 'transparent'}}, {css:{fill: '#ffffff'}, repeat: 0 }, 0.2),
+          TweenMax.fromTo('#voiceGuyAnimation', 0.8, { css:{transform: 'translateX(420px)', opacity: 0}}, {css:{transform: 'translateX(0px)', opacity: 1}})
+        ]);
+        var voiceGuyScene = new ScrollScene({ triggerElement: '#voiceGuyScene', offset: 80})
+          .setClassToggle('body', 'voiceGuyScene_active')
+          .setTween(voiceGuyTween)
           .addTo(scrollController);
 
         var thirtyYardTween = TweenMax.fromTo('#thirtyYardAnimation', 1.4, {css:{transform: 'translateY(240px)', opacity: 0}}, {css:{transform: 'translateY(-120px)', opacity: 1}});
@@ -69,25 +61,61 @@
           .setTween(thirtyYardTween)
           .addTo(scrollController);
 
+          var brainGuyTween = new TimelineMax();
+          brainGuyTween.add([
+            TweenMax.staggerFromTo('[data-name="lightbulb"]', 0.4, {css:{opacity: '0'}}, {css:{opacity: '1'}, repeat: 0 }, 0.2),
+            TweenMax.fromTo('#brainGuyAnimation', 0.8, { css:{transform: 'translateX(420px)', opacity: 0}}, {css:{transform: 'translateX(0px)', opacity: 1}})
+          ]);
+          var brainGuyScene = new ScrollScene({ triggerElement: '#brainGuyScene', offset: 80})
+            .setClassToggle('body', 'brainGuyScene_active')
+            .setTween(brainGuyTween)
+            .addTo(scrollController);
+
+          var heartGuyTween = new TimelineMax();
+          heartGuyTween.add([
+            TweenMax.fromTo('[data-name="heart"]', 2.4, {css:{strokeWidth: '1rem', stroke: '#FF4338'}}, {css:{strokeWidth: '0', stroke: '#FF4338'}, repeat: -1, yoyo: true }, 1),
+            TweenMax.fromTo('#heartGuyAnimation', 0.8, { css:{transform: 'translateX(420px)', opacity: 0}}, {css:{transform: 'translateX(0px)', opacity: 1}})
+          ]);
+          var heartGuyScene = new ScrollScene({ triggerElement: '#heartGuyScene', offset: 80})
+            .setClassToggle('body', 'heartGuyScene_active')
+            .setTween(heartGuyTween)
+            .addTo(scrollController);
+
+        //
+        // var lightBulbTween = TweenMax.fromTo('[data-name="comment"]', 0.8, { css:{transform: 'scale(1)', opacity: 0}}, {css:{transform: 'scale(1)', opacity: 1}});
+        // var lightBulbScene = new ScrollScene({ triggerElement: '#lightBulbScene', offset: 320, duration: 360})
+        //   .setClassToggle('body', 'brainScene_active')
+        //   .setTween(lightBulbTween)
+        //   .addTo(scrollController);
+        //
         var tenYardTween = TweenMax.fromTo('#tenYardAnimation', 1.4, {css:{transform: 'translateY(240px)', opacity: 0}}, {css:{transform: 'translateY(-120px)', opacity: 1}});
         var tenYardScene = new ScrollScene({triggerElement: '#tenYardScene', offset: -240})
           .setClassToggle('body', 'tenYardScene_active')
           .setTween(tenYardTween)
           .addTo(scrollController);
+        //
+        // var heartGuyTween = TweenMax.fromTo('#heartGuyAnimation', 0.8, { css:{transform: 'translateX(0px) scale(1)', opacity: 1}}, {css:{transform: 'translateX(-420px) scale(.5)', opacity: 0}});
+        // var heartGuyScene = new ScrollScene({ triggerElement: '#heartGuyScene', offset: 320, duration: 360})
+        //   .setClassToggle('body', 'heartGuyScene_active')
+        //   .setTween(heartGuyTween)
+        //   .addTo(scrollController);
+        //
+        // var heartBeatTween = TweenMax.fromTo('#heartBeatAnimation', 0.8, { css:{transform: 'translateX(0px) scale(1)', opacity: 1}}, {css:{transform: 'translateX(-420px) scale(.5)', opacity: 0}});
+        // var heartBeatScene = new ScrollScene({ triggerElement: '#heartBeatScene', offset: 320, duration: 360})
+        //   .setClassToggle('body', 'heartBeatScene_active')
+        //   .setTween(heartBeatTween)
+        //   .addTo(scrollController);
 
         // Add debug indicators fixed on right side
         titleScene.addIndicators();
         stadiumScene.addIndicators();
         scoreboardScene.addIndicators();
-
-        placeholderOneScene.addIndicators();
-        placeholderTwoScene.addIndicators();
-        placeholderThreeScene.addIndicators();
-
         fiftyYardScene.addIndicators();
+        voiceGuyScene.addIndicators();
         thirtyYardScene.addIndicators();
+        brainGuyScene.addIndicators();
         tenYardScene.addIndicators();
-
+        heartGuyScene.addIndicators();
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

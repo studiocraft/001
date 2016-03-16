@@ -1,96 +1,71 @@
 * {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 html,
 body {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 body {
   font-family: 'Montserrat', sans-serif;
-  color: #FFFFFF;
-  background-color: #00AEFF;
-  font-size: 1.6rem;
-}
+  color: #fff;
+  background-color: #00aeff;
+  font-size: 1.6rem; }
 
 img {
   display: block;
   max-width: 100%;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
 footer {
   padding-top: 8rem;
   padding-bottom: 4rem;
-  background-color: #FFD700;
-  color: #2B3990;
-  text-align: center;
-}
-footer h1,
-footer h2,
-footer h3,
-footer h4,
-footer h5,
-footer h6 {
-  color: inherit;
-}
-footer svg {
-  padding-top: 4rem;
-  padding-bottom: 0;
-  width: 4rem;
-}
+  background-color: #ffd700;
+  color: #2b3990;
+  text-align: center; }
+  footer h1, footer h2, footer h3,
+  footer h4, footer h5, footer h6 {
+    color: inherit; }
+  footer svg {
+    padding-top: 4rem;
+    padding-bottom: 0;
+    width: 4rem; }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #FFD700;
+h1, h2, h3, h4, h5, h6 {
+  color: #ffd700;
   font-weight: bold;
-  letter-spacing: 0.2rem;
-  text-rendering: optimizeLegibility;
-}
+  letter-spacing: .2rem;
+  text-rendering: optimizeLegibility; }
 
 h1 {
   font-size: 4.8rem;
-  margin: 2.4rem 0 1.2rem;
-}
+  margin: 2.4rem 0 1.2rem; }
 
 h2 {
   font-size: 3.6rem;
-  margin: 1.8rem 0 1.2rem;
-}
+  margin: 1.8rem 0 1.2rem; }
 
 h3 {
   font-size: 2.8rem;
-  margin: 1.4rem 0 1.2rem;
-}
+  margin: 1.4rem 0 1.2rem; }
 
 h4 {
   font-size: 1.8rem;
-  margin: 1.2rem 0 0.8rem;
-}
+  margin: 1.2rem 0 0.8rem; }
 
 h5 {
   font-size: 1.6rem;
-  margin: 1.2rem 0 0.8rem;
-}
+  margin: 1.2rem 0 0.8rem; }
 
 h6 {
   font-size: 1.4rem;
-  margin: 0.8rem 0 0.4rem;
-}
+  margin: 0.8rem 0 0.4rem; }
 
 p {
-  letter-spacing: 0.1rem;
-}
+  letter-spacing: .1rem; }
 
 small {
-  font-size: 80%;
-}
+  font-size: 80%; }
 
 header {
   text-align: left;
@@ -98,109 +73,89 @@ header {
   padding-right: 0;
   padding-bottom: 2rem;
   padding-left: 0;
-  position: relative;
-}
-header .logo {
-  display: inline-block;
-  width: 32rem;
-}
+  position: relative; }
+  header .logo {
+    display: inline-block;
+    width: 32rem; }
 
 main .title-scene .animation,
 main .stadium-scene .animation,
 main .scoreboard-scene .animation,
-main .placeholder-scene .animation {
-  display: block;
-}
-main .placeholder-scene .animation {
-  text-align: center;
-  color: #2B3990;
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 0.1rem solid #2B3990;
-  height: 46rem;
-  padding: 2rem 0;
-}
 main .fifty-yard-scene .animation,
+main .voice-guy-scene .animation,
 main .thirty-yard-scene .animation,
 main .ten-yard-scene .animation,
 main .end-zone-scene .animation {
-  display: block;
-}
+  display: block; }
+main .voice-guy-scene,
+main .brain-guy-scene,
+main .heart-guy-scene {
+  margin-bottom: -5rem; }
 main .end-zone-scene {
-  background-color: #2BB673;
-  background-image: -webkit-linear-gradient(45deg, #30CB80 25%, transparent 25%, transparent 75%, #30CB80 75%, #30CB80), -webkit-linear-gradient(45deg, #30CB80 25%, transparent 25%, transparent 75%, #30CB80 75%, #30CB80);
-  background-image:         linear-gradient(45deg, #30CB80 25%, transparent 25%, transparent 75%, #30CB80 75%, #30CB80), linear-gradient(45deg, #30CB80 25%, transparent 25%, transparent 75%, #30CB80 75%, #30CB80);
+  background-color: #2bb673;
+  background-image: -webkit-linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80), -webkit-linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80);
+  background-image: linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80), linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80);
   background-size: 16rem 16rem;
-  background-position: 0 0, 8rem 8rem;
-}
+  background-position: 0 0, 8rem 8rem; }
 main .field {
-  background-color: #2BB673;
-  margin-top: -35%;
-}
-main .field .yard-line {
-  border-top: 2rem solid #FFFFFF;
-  border-bottom: 0;
-  margin: 0;
-  color: #FFFFFF;
-  font-family: 'Ultra', serif;
-  letter-spacing: 1rem;
-  font-size: 10rem;
-  clear: both;
-}
-main .field .yard-line::before {
-  float: right;
-  content: '';
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
-  height: 20rem;
-  -webkit-writing-mode: vertical-lr;
-      -ms-writing-mode: tb-lr;
-          writing-mode: vertical-lr;
-  clear: both;
-}
-main .field .fifty::before {
-  content: '50';
-}
-main .field .thirty::before {
-  content: '30';
-}
-main .field .ten::before {
-  content: '10';
-}
-main .field .zero::before {
-  content: '0';
-}
-main .field .hash-line {
-  border-top: 0 solid transparent;
-  border-bottom: 0;
-  margin: 0;
-  padding: 0;
-  clear: both;
-}
-main .field .hash-line::before {
-  float: left;
-  display: block;
-  content: '';
-  width: 1.5rem;
-  border-top: 2rem solid #FFFFFF;
-  height: 20rem;
-  border-bottom: 2rem solid #FFFFFF;
-  margin-bottom: 20rem;
-  box-sizing: content-box;
-  clear: both;
-}
-main .field .hash-line::after {
-  float: left;
-  display: block;
-  content: '';
-  width: 1.5rem;
-  border-top: 2rem solid #FFFFFF;
-  height: 20rem;
-  border-bottom: 2rem solid #FFFFFF;
-  margin-bottom: 20rem;
-  box-sizing: content-box;
-  clear: both;
-}
+  background-color: #2bb673;
+  margin-top: -35%; }
+  main .field .yard-line {
+    border-top: 2rem solid #fff;
+    border-bottom: 0;
+    margin: 0;
+    color: #fff;
+    font-family: 'Ultra', serif;
+    letter-spacing: 1rem;
+    font-size: 10rem;
+    clear: both; }
+    main .field .yard-line::before {
+      float: right;
+      content: '';
+      -webkit-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+              transform: rotate(180deg);
+      height: 20rem;
+      -webkit-writing-mode: vertical-lr;
+          -ms-writing-mode: tb-lr;
+              writing-mode: vertical-lr;
+      clear: both; }
+  main .field .fifty::before {
+    content: '50'; }
+  main .field .thirty::before {
+    content: '30'; }
+  main .field .ten::before {
+    content: '10'; }
+  main .field .zero::before {
+    content: '0'; }
+  main .field .hash-line {
+    border-top: 0 solid transparent;
+    border-bottom: 0;
+    margin: 0;
+    padding: 0;
+    clear: both; }
+    main .field .hash-line::before {
+      float: left;
+      display: block;
+      content: '';
+      width: 1.5rem;
+      border-top: 2rem solid #fff;
+      height: 20rem;
+      border-bottom: 2rem solid #fff;
+      margin-bottom: 20rem;
+      box-sizing: content-box;
+      clear: both; }
+    main .field .hash-line::after {
+      float: left;
+      display: block;
+      content: '';
+      width: 1.5rem;
+      border-top: 2rem solid #fff;
+      height: 20rem;
+      border-bottom: 2rem solid #fff;
+      margin-bottom: 20rem;
+      box-sizing: content-box;
+      clear: both; }
 
 
 
