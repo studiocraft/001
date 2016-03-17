@@ -19,103 +19,160 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+        var windowHeight = $(window).height();
         var scrollController = new ScrollMagic();
-        var titleHeight = $('#titleAnimation').height();
+
+        var titleSceneHeight = $('#titleAnimation').height();
         var titleTween = TweenMax.fromTo('#titleAnimation', 0.8, {css:{ transform: 'scale(0)', opacity: 0 }}, {css:{ transform: 'scale(1)', opacity: 1}});
-        var titleScene = new ScrollScene({triggerElement: '#titleScene', offset: titleHeight/2})
+        var titleScene = new ScrollScene({triggerElement: '#titleScene', offset: titleSceneHeight/2})
           .setClassToggle('body', 'titleScene_active')
           .setTween(titleTween)
           .addTo(scrollController);
 
-        var stadiumTween = TweenMax.staggerFromTo('[data-name="light"]', 0.5, {css:{fill: '#ffffff'}}, {css:{fill: 'transparent'}, repeat: 3, yoyo: true }, 1);
-        var stadiumScene = new ScrollScene({triggerElement: '#stadiumScene', offset: -240, duration: 760})
+        var stadiumSceneHeight = $('#stadiumScene').height();
+        var stadiumTween = TweenMax.staggerFromTo('[data-name="light"]', 0.5, {css:{fill: '#ffffff'}}, {css:{fill: 'transparent'}, repeat: 3, yoyo: true}, 1);
+        var stadiumScene = new ScrollScene({triggerElement: '#stadiumScene', offset: -stadiumSceneHeight/4, duration: stadiumSceneHeight})
           .setClassToggle('body', 'stadiumScene_active')
           .setTween(stadiumTween)
           .addTo(scrollController);
 
-        var scoreboardTween = TweenMax.fromTo('#scoreboardAnimation', 1.4, {css:{transform: 'translateY(100px)', opacity: 0}}, {css:{transform: 'translateY(0px)', opacity: 1}});
-        var scoreboardScene = new ScrollScene({triggerElement: '#scoreboardScene', offset: -120})
+        var scoreboardSceneHeight = $('#scoreboardScene').height();
+        var scoreboardTween = TweenMax.fromTo('#scoreboardAnimation', 1.4, {css:{transform: 'translateY(100px)', opacity: 0}}, {css:{transform: 'translateY(0)', opacity: 1}});
+        var scoreboardScene = new ScrollScene({triggerElement: '#scoreboardScene', offset: -scoreboardSceneHeight/4})
           .setClassToggle('body', 'scoreboardScene_active')
           .setTween(scoreboardTween)
           .addTo(scrollController);
 
-        var fiftyYardTween = TweenMax.fromTo('#fiftyYardAnimation', 1.4, {css:{transform: 'translateX(-320px)', opacity: 0}}, {css:{transform: 'translateX(0px)', opacity: 1}});
-        var fiftyYardScene = new ScrollScene({triggerElement: '#fiftyYardScene', offset: -120})
-          .setClassToggle('body', 'fiftyYardScene_active')
-          .setTween(fiftyYardTween)
-          .addTo(scrollController);
-
-        var voiceGuyTween = new TimelineMax();
-        voiceGuyTween.add([
-          TweenMax.staggerFromTo('[data-name="comment"]', 0.5, {css:{fill: 'transparent'}}, {css:{fill: '#ffffff'}, repeat: 0 }, 0.2),
-          TweenMax.fromTo('#voiceGuyAnimation', 0.8, { css:{transform: 'translateX(420px)', opacity: 0}}, {css:{transform: 'translateX(0px)', opacity: 1}})
+        var actOneSceneHeight = $('#actOneScene').height();
+        var actOneTween = new TimelineMax();
+        actOneTween.add([
+          TweenMax.fromTo('#textOneAnimation', 1.2, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}}),
+          TweenMax.fromTo('#voiceGuyAnimation', 0.4, { css:{transform: 'translateX(100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}}),
+          TweenMax.staggerFromTo('[data-name="comment"]', 0.8, {css:{fill: 'transparent'}}, {css:{fill: '#ffffff'}, repeat: 0 }, 0.2)
         ]);
-        var voiceGuyScene = new ScrollScene({ triggerElement: '#voiceGuyScene', offset: 80})
-          .setClassToggle('body', 'voiceGuyScene_active')
-          .setTween(voiceGuyTween)
+        var actOneScene = new ScrollScene({ triggerElement: '#actOneScene', offset: 0})
+          .setClassToggle('body', 'actOneScene_active')
+          .setTween(actOneTween)
           .addTo(scrollController);
 
-        var thirtyYardTween = TweenMax.fromTo('#thirtyYardAnimation', 1.4, {css:{transform: 'translateY(240px)', opacity: 0}}, {css:{transform: 'translateY(-120px)', opacity: 1}});
-        var thirtyYardScene = new ScrollScene({triggerElement: '#thirtyYardScene', offset: -240})
-          .setClassToggle('body', 'thirtyYardScene_active')
-          .setTween(thirtyYardTween)
+        var actOnePinTween = TweenMax.fromTo('[data-name="playerOne"]', 0.2, {css:{transform: 'rotate(-5deg)'}}, {css:{transform: 'rotate(5deg)'},repeat: -1, yoyo: true}, 2);
+
+        var actOnePinHeight = $('#helmetOneScene').height();
+        var actOnePin = new ScrollScene({ triggerElement: '#helmetOneScene', offset: actOnePinHeight, duration: windowHeight})
+          .setClassToggle('body', 'helmetOneScenePin_active')
+          .setPin('#playersGroupOne')
+          .setTween(actOnePinTween)
           .addTo(scrollController);
 
-          var brainGuyTween = new TimelineMax();
-          brainGuyTween.add([
-            TweenMax.staggerFromTo('[data-name="lightbulb"]', 0.4, {css:{opacity: '0'}}, {css:{opacity: '1'}, repeat: 0 }, 0.2),
-            TweenMax.fromTo('#brainGuyAnimation', 0.8, { css:{transform: 'translateX(420px)', opacity: 0}}, {css:{transform: 'translateX(0px)', opacity: 1}})
-          ]);
-          var brainGuyScene = new ScrollScene({ triggerElement: '#brainGuyScene', offset: 80})
-            .setClassToggle('body', 'brainGuyScene_active')
-            .setTween(brainGuyTween)
-            .addTo(scrollController);
-
-          var heartGuyTween = new TimelineMax();
-          heartGuyTween.add([
-            TweenMax.fromTo('[data-name="heart"]', 0.8, {css:{strokeWidth: '1rem', stroke: '#FF4338'}}, {css:{strokeWidth: '0', stroke: '#FF4338'}, repeat: -1, yoyo: true }, 1),
-            TweenMax.fromTo('#heartGuyAnimation', 0.8, { css:{transform: 'translateX(420px)', opacity: 0}}, {css:{transform: 'translateX(0px)', opacity: 1}})
-          ]);
-          var heartGuyScene = new ScrollScene({ triggerElement: '#heartGuyScene', offset: 80})
-            .setClassToggle('body', 'heartGuyScene_active')
-            .setTween(heartGuyTween)
-            .addTo(scrollController);
-
-        //
-        // var lightBulbTween = TweenMax.fromTo('[data-name="comment"]', 0.8, { css:{transform: 'scale(1)', opacity: 0}}, {css:{transform: 'scale(1)', opacity: 1}});
-        // var lightBulbScene = new ScrollScene({ triggerElement: '#lightBulbScene', offset: 320, duration: 360})
-        //   .setClassToggle('body', 'brainScene_active')
-        //   .setTween(lightBulbTween)
-        //   .addTo(scrollController);
-        //
-        var tenYardTween = TweenMax.fromTo('#tenYardAnimation', 1.4, {css:{transform: 'translateY(240px)', opacity: 0}}, {css:{transform: 'translateY(-120px)', opacity: 1}});
-        var tenYardScene = new ScrollScene({triggerElement: '#tenYardScene', offset: -240})
-          .setClassToggle('body', 'tenYardScene_active')
-          .setTween(tenYardTween)
+        var actOneFoulTween = TweenMax.staggerFromTo('[data-foul-one="true"]', 0.6, {scale: 1, rotation: 0},{scale: 0, rotation: 360}, 1);
+        var actOneFoulScene = new ScrollScene({ triggerElement: '#helmetOneScene', offset: actOnePinHeight*1.2})
+          .setClassToggle('body', 'actOneFoul_active')
+          .setTween(actOneFoulTween)
           .addTo(scrollController);
-        //
-        // var heartGuyTween = TweenMax.fromTo('#heartGuyAnimation', 0.8, { css:{transform: 'translateX(0px) scale(1)', opacity: 1}}, {css:{transform: 'translateX(-420px) scale(.5)', opacity: 0}});
-        // var heartGuyScene = new ScrollScene({ triggerElement: '#heartGuyScene', offset: 320, duration: 360})
-        //   .setClassToggle('body', 'heartGuyScene_active')
-        //   .setTween(heartGuyTween)
-        //   .addTo(scrollController);
-        //
-        // var heartBeatTween = TweenMax.fromTo('#heartBeatAnimation', 0.8, { css:{transform: 'translateX(0px) scale(1)', opacity: 1}}, {css:{transform: 'translateX(-420px) scale(.5)', opacity: 0}});
-        // var heartBeatScene = new ScrollScene({ triggerElement: '#heartBeatScene', offset: 320, duration: 360})
-        //   .setClassToggle('body', 'heartBeatScene_active')
-        //   .setTween(heartBeatTween)
-        //   .addTo(scrollController);
+
+        var actTwoSceneHeight = $('#actTwoScene').height();
+        var actTwoTween = new TimelineMax();
+        actTwoTween.add([
+          TweenMax.fromTo('#textTwoAnimation', 1.8, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}}),
+          TweenMax.staggerFromTo('[data-name="lightbulb"]', 0.4, {css:{opacity: '0'}}, {css:{opacity: '1'}, repeat: 0 }, 0.2),
+          TweenMax.fromTo('#brainGuyAnimation', 0.8, { css:{transform: 'translateX(100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
+        ]);
+        var actTwoScene = new ScrollScene({ triggerElement: '#actTwoScene', offset: -actTwoSceneHeight/3})
+          .setClassToggle('body', 'actTwoScene_active')
+          .setTween(actTwoTween)
+          .addTo(scrollController);
+
+        var actTwoPinTween = TweenMax.fromTo('[data-name="playerTwo"]', 0.2, {css:{transform: 'rotate(-5deg)'}}, {css:{transform: 'rotate(5deg)'},repeat: -1, yoyo: true}, 2);
+
+        var actTwoPinHeight = $('#helmetTwoScene').height();
+        var actTwoPin = new ScrollScene({ triggerElement: '#helmetTwoScene', offset: actTwoPinHeight, duration: windowHeight})
+          .setClassToggle('body', 'helmetTwoScenePin_active')
+          .setPin('#playersGroupTwo')
+          .setTween(actTwoPinTween)
+          .addTo(scrollController);
+
+        var actTwoFoulTween = TweenMax.staggerFromTo('[data-foul-two="true"]', 0.6, {scale: 1, rotation: 0},{scale: 0, rotation: 360}, 1);
+        var actTwoFoulScene = new ScrollScene({ triggerElement: '#helmetTwoScene', offset: actTwoPinHeight*1.2})
+          .setClassToggle('body', 'actTwoFoul_active')
+          .setTween(actTwoFoulTween)
+          .addTo(scrollController);
+
+        var actThreeSceneHeight = $('#actThreeScene').height();
+        var actThreeTween = new TimelineMax();
+        actThreeTween.add([
+          TweenMax.fromTo('#textThreeAnimation', 1.4, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}}),
+          TweenMax.fromTo('[data-name="heart"]', 0.8, {css:{strokeWidth: '1rem', stroke: '#FF4338'}}, {css:{strokeWidth: '0', stroke: '#FF4338'}, repeat: -1, yoyo: true }, 1),
+          TweenMax.fromTo('#heartGuyAnimation', 0.8, { css:{transform: 'translateX(100px)', opacity: 0}}, {css:{transform: 'translateX(0px)', opacity: 1}})
+        ]);
+        var actThreeScene = new ScrollScene({ triggerElement: '#actThreeScene', offset: 0})
+          .setClassToggle('body', 'actThreeScene_active')
+          .setTween(actThreeTween)
+          .addTo(scrollController);
+
+        var actThreePinTween = TweenMax.fromTo('[data-name="playerThree"]', 0.2, {css:{transform: 'rotate(-5deg)'}}, {css:{transform: 'rotate(5deg)'},repeat: -1, yoyo: true}, 2);
+
+        var actThreePinHeight = $('#helmetThreeScene').height();
+        var actThreePin = new ScrollScene({ triggerElement: '#helmetThreeScene', offset: actThreePinHeight, duration: windowHeight})
+          .setClassToggle('body', 'helmetThreeScenePin_active')
+          .setPin('#playersGroupThree')
+          .setTween(actThreePinTween)
+          .addTo(scrollController);
+
+        var actThreeFoulTween = TweenMax.staggerFromTo('[data-foul-three="true"]', 0.6, {scale: 1, rotation: 0},{scale: 0, rotation: 360}, 1);
+        var actThreeFoulScene = new ScrollScene({ triggerElement: '#helmetThreeScene', offset: actThreePinHeight*1.2})
+          .setClassToggle('body', 'actThreeFoul_active')
+          .setTween(actThreeFoulTween)
+          .addTo(scrollController);
+
+        var encoreSceneHeight = $('#encoreScene').height();
+        var encoreTween = new TimelineMax();
+        encoreTween.add([
+          TweenMax.fromTo('#encoreTextAnimation', 1.4, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}}),
+          TweenMax.fromTo('#goalPostAnimation', 0.8, {css:{transform: 'translateY(200px)', opacity: 0}}, {css:{transform: 'translateY(0)', opacity: 1}})
+        ]);
+        var encoreScene = new ScrollScene({ triggerElement: '#encoreScene', offset: 0})
+          .setClassToggle('body', 'encoreScene_active')
+          .setTween(encoreTween)
+          .addTo(scrollController);
+
+        var encorePinTween = TweenMax.fromTo('[data-name="playerFour"]', 0.2, {css:{transform: 'rotate(-5deg)'}}, {css:{transform: 'rotate(5deg)'},repeat: -1, yoyo: true}, 2);
+
+        var encorePinHeight = $('#helmetFourScene').height();
+        var encorePin = new ScrollScene({ triggerElement: '#helmetFourScene', offset: actThreePinHeight, duration: encorePinHeight})
+          .setClassToggle('body', 'helmetFourScenePin_active')
+          .setPin('#playersGroupFour')
+          .setTween(encorePinTween)
+          .addTo(scrollController);
+
+        var chalkBoardHeight = $('#chalkBoardScene').height();
+        var chalkBoardTween = TweenMax.fromTo('#chalkBoardAnimation', 1.4, {css:{transform: 'translateY(-240px)', opacity: 0}}, {css:{transform: 'translateY(0)', opacity: 1}});
+        var recapScene = new ScrollScene({triggerElement: '#chalkBoardScene', offset: -chalkBoardHeight/3})
+          .setClassToggle('body', 'chalkBoardScene_active')
+          .setTween(chalkBoardTween)
+          .addTo(scrollController);
 
         // Add debug indicators fixed on right side
         titleScene.addIndicators();
         stadiumScene.addIndicators();
         scoreboardScene.addIndicators();
-        fiftyYardScene.addIndicators();
-        voiceGuyScene.addIndicators();
-        thirtyYardScene.addIndicators();
-        brainGuyScene.addIndicators();
-        tenYardScene.addIndicators();
-        heartGuyScene.addIndicators();
+
+        actOneScene.addIndicators();
+        actOnePin.addIndicators();
+        actOneFoulScene.addIndicators();
+
+        actTwoScene.addIndicators();
+        actTwoPin.addIndicators();
+        actTwoFoulScene.addIndicators();
+
+        actThreeScene.addIndicators();
+        actThreePin.addIndicators();
+        actThreeFoulScene.addIndicators();
+
+        encoreScene.addIndicators();
+        encorePin.addIndicators();
+
+        recapScene.addIndicators();
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

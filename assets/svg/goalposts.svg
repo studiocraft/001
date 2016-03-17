@@ -1,12 +1,12 @@
-<svg id="Goal_Post" data-name="Goal Post" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 951.54 1317.69">
+<svg id="Goal_Post" data-name="Goal Post" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 951.6 652.65">
   <title>goalposts</title>
   <g>
-    <path d="M975.07,5712.48v382.11a28.86,28.86,0,0,1-28.92,28.8H82.4a28.86,28.86,0,0,1-28.92-28.8V5712.48" transform="translate(-38.51 -5697.51)" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 29.9382644891739px"/>
-    <line x1="472.44" y1="545.69" x2="472.44" y2="425.88" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 29.9382644891739px"/>
+    <path d="M975.07,5910.9v383.69a28.92,28.92,0,0,1-28.92,28.92H82.4a28.92,28.92,0,0,1-28.92-28.92V5910.9" transform="translate(-38.47 -5895.9)" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 30px"/>
+    <line x1="472.47" y1="547.91" x2="472.47" y2="427.61" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 30px"/>
     <g>
-      <path d="M470.34,7015.2V6193.65c0-5.72,5.15-10.35,11.5-10.35h62.74c6.35,0,11.5,4.63,11.5,10.35V7015.2H470.34Z" transform="translate(-38.51 -5697.51)" style="fill: #c1272d"/>
-      <rect x="431.83" y="529.07" width="85.73" height="16.56" style="fill: #f2f2f2"/>
-      <rect x="431.83" y="561.15" width="85.73" height="7.41" style="fill: #f2f2f2"/>
+      <path d="M470.34,6548.55V6398.92c0-8.43,5.15-15.26,11.5-15.26h62.74c6.35,0,11.5,6.83,11.5,15.26v149.63H470.34Z" transform="translate(-38.47 -5895.9)" style="fill: #c1272d"/>
+      <rect x="431.86" y="551.56" width="85.73" height="24.41" style="fill: #f2f2f2"/>
+      <rect x="431.86" y="598.85" width="85.73" height="10.92" style="fill: #f2f2f2"/>
     </g>
   </g>
 </svg>

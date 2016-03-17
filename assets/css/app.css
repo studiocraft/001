@@ -77,8 +77,9 @@ header {
   header .logo {
     display: inline-block;
     width: 32rem; }
+  header .title-scene .animation {
+    opacity: 0; }
 
-main .title-scene .animation,
 main .stadium-scene .animation,
 main .scoreboard-scene .animation,
 main .fifty-yard-scene .animation,
@@ -87,10 +88,6 @@ main .thirty-yard-scene .animation,
 main .ten-yard-scene .animation,
 main .end-zone-scene .animation {
   display: block; }
-main .voice-guy-scene,
-main .brain-guy-scene,
-main .heart-guy-scene {
-  margin-bottom: -5rem; }
 main .end-zone-scene {
   background-color: #2bb673;
   background-image: -webkit-linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80), -webkit-linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80);
@@ -99,7 +96,12 @@ main .end-zone-scene {
   background-position: 0 0, 8rem 8rem; }
 main .field {
   background-color: #2bb673;
-  margin-top: -35%; }
+  margin-top: -35%;
+  overflow: hidden; }
+  main .field object {
+    -webkit-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);
+            transform: rotate(-5deg); }
   main .field .yard-line {
     border-top: 2rem solid #fff;
     border-bottom: 0;
@@ -134,7 +136,7 @@ main .field {
     margin: 0;
     padding: 0;
     clear: both; }
-    main .field .hash-line::before {
+    main .field .hash-line.first::before {
       float: left;
       display: block;
       content: '';
@@ -145,7 +147,7 @@ main .field {
       margin-bottom: 20rem;
       box-sizing: content-box;
       clear: both; }
-    main .field .hash-line::after {
+    main .field .hash-line.first::after {
       float: left;
       display: block;
       content: '';
@@ -153,6 +155,23 @@ main .field {
       border-top: 2rem solid #fff;
       height: 20rem;
       border-bottom: 2rem solid #fff;
+      box-sizing: content-box;
+      clear: both; }
+    main .field .hash-line.second::before {
+      float: left;
+      display: block;
+      content: '';
+      width: 1.5rem;
+      border-top: 2rem solid #fff;
+      margin-bottom: 20rem;
+      box-sizing: content-box;
+      clear: both; }
+    main .field .hash-line.second::after {
+      float: left;
+      display: block;
+      content: '';
+      width: 1.5rem;
+      border-top: 2rem solid #fff;
       margin-bottom: 20rem;
       box-sizing: content-box;
       clear: both; }
