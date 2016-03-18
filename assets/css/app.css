@@ -7,7 +7,7 @@ html.locked {
 
 html,
 body {
-  margin: 1rem 0; }
+  margin: 1.8rem 0; }
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -19,6 +19,11 @@ img {
   max-width: 100%;
   margin: 0 auto; }
 
+img.icon-logo {
+  padding-top: 6rem;
+  padding-bottom: 0;
+  width: 6rem; }
+
 #loaderOverlay {
   position: fixed;
   z-index: 999999;
@@ -26,7 +31,11 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #00aeff; }
+  padding: 20rem;
+  color: #2b3990;
+  background: #fff; }
+  #loaderOverlay img.icon-logo {
+    width: 20rem; }
 
 footer {
   padding-top: 8rem;
@@ -37,10 +46,6 @@ footer {
   footer h1, footer h2, footer h3,
   footer h4, footer h5, footer h6 {
     color: inherit; }
-  footer svg {
-    padding-top: 4rem;
-    padding-bottom: 0;
-    width: 4rem; }
 
 h1, h2, h3, h4, h5, h6 {
   color: #ffd700;
@@ -92,10 +97,7 @@ header {
     width: 36rem;
     margin: 0 4rem; }
   header .title-scene {
-    margin-top: 15%;
     padding-bottom: 100%; }
-    header .title-scene .animation {
-      opacity: 0; }
 
 main .stadium-scene {
   margin-top: -10%; }
