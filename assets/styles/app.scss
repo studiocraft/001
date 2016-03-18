@@ -10,19 +10,25 @@ $purple: #2b3990;
 @import 'type';
 
 header {
+  background-color: $blue;
   text-align: left;
   padding-top: 2rem;
   padding-right: 0;
   padding-bottom: 2rem;
   padding-left: 0;
   position: relative;
+  z-index: -1;
 
   .logo {
     display: inline-block;
-    width: 32rem;
+    width: 36rem;
+    margin: 0 4rem;
   }
 
   .title-scene {
+    margin-top: 15%;
+    padding-bottom: 100%;
+
     .animation {
       opacity: 0;
     }
@@ -31,6 +37,10 @@ header {
 }
 
 main {
+
+  .stadium-scene {
+    margin-top: -10%;
+  }
 
   .stadium-scene,
   .scoreboard-scene,
@@ -57,10 +67,6 @@ main {
     background-color: $green;
     margin-top: -35%;
     overflow: hidden;
-
-    object {
-      transform: rotate(-5deg);
-    }
 
     .yard-line {
       border-top: 2rem solid $white;

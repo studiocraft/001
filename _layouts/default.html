@@ -1,17 +1,32 @@
 <!DOCTYPE html>
-<html id="superBowlAnimation" lang="en">
+<html id="superBowlAnimation" class="locked" lang="en">
   <head>
   {% include head.html %}
   </head>
-  <body id="{{ page.slug }}" class="container-fluid">
-    <header>
-      <img class="logo animated fadeIn" src="{{ site.baseurl }}/assets/svg/logo.svg">
-      <div class="container">
-        <div id="titleScene" class="row title-scene">
+  <body id="{{ page.slug }}">
+    <div id="loaderOverlay" class="text-center">Loading ...</div>
+    <div class="container">
+      <header class="row">
+        <img class="logo animated fadeIn" src="{{ site.baseurl }}/assets/svg/logo.svg">
+        <div id="titleScene" class="title-scene">
           <div id="titleAnimation" class="animation col-md-10 col-md-offset-1">
             <svg id="Header" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 845.03 598.92">
               <title>header</title>
-              <g id="SUB-TITLE">
+              <g id="title">
+                <text transform="translate(76.28 292.93) rotate(-70.54)" style="font-size: 95.1204833984375px;fill: gold;font-family: Montserrat;font-weight: 700">S</text>
+                <text transform="translate(99.02 230.13) rotate(-50.58)" style="font-size: 95.12039184570312px;fill: gold;font-family: Montserrat;font-weight: 700">U</text>
+                <text transform="matrix(0.82, -0.58, 0.58, 0.82, 149.41, 171.54)" style="font-size: 95.12085723876953px;fill: gold;font-family: Montserrat;font-weight: 700">P</text>
+                <text transform="matrix(0.92, -0.4, 0.4, 0.92, 208.25, 131.17)" style="font-size: 95.12059783935547px;fill: gold;font-family: Montserrat;font-weight: 700">E</text>
+                <text transform="matrix(0.97, -0.24, 0.24, 0.97, 274.28, 102.94)" style="font-size: 95.12077331542969px;fill: gold;font-family: Montserrat;font-weight: 700">R</text>
+                <text transform="matrix(0.99, -0.13, 0.13, 0.99, 349.08, 86.67)" style="font-size: 95.12004089355469px;fill: gold;font-family: Montserrat;font-weight: 700"> </text>
+                <text transform="translate(377.5 82.22) rotate(-1.12)" style="font-size: 95.12053680419922px;fill: gold;font-family: Montserrat;font-weight: 700">B</text>
+                <text transform="translate(453.08 80.98) rotate(8.05)" style="font-size: 95.12078857421875px;fill: gold;font-family: Montserrat;font-weight: 700">O</text>
+                <text transform="matrix(0.94, 0.35, -0.35, 0.94, 534.31, 91.23)" style="font-size: 95.12064361572266px;fill: gold;font-family: Montserrat;font-weight: 700">W</text>
+                <text transform="translate(637.07 132.56) rotate(33.53)" style="font-size: 95.12061309814453px;fill: gold;font-family: Montserrat;font-weight: 700">L</text>
+                <text transform="translate(708.81 185.74) rotate(52.52)" style="font-size: 95.12088775634766px;fill: gold;font-family: Montserrat;font-weight: 700">5</text>
+                <text transform="translate(747.03 234.75) rotate(71.62)" style="font-size: 95.12030792236328px;fill: gold;font-family: Montserrat;font-weight: 700">0</text>
+              </g>
+              <g id="subTitle">
                 <text transform="matrix(0.56, 0.83, -0.83, 0.56, 69.31, 428.48)" style="font-size: 33.29230880737305px;fill: #2b3990;font-family: Montserrat;font-weight: 700">T</text>
                 <text transform="matrix(0.65, 0.76, -0.76, 0.65, 83.69, 449.29)" style="font-size: 33.29225158691406px;fill: #2b3990;font-family: Montserrat;font-weight: 700">H</text>
                 <text transform="translate(104.14 472.38) rotate(43.39)" style="font-size: 33.29199981689453px;fill: #2b3990;font-family: Montserrat;font-weight: 700">E</text>
@@ -48,20 +63,6 @@
                 <text transform="translate(765.08 441.65) rotate(-56.96)" style="font-size: 33.29204177856445px;fill: #2b3990;font-family: Montserrat;font-weight: 700">E</text>
                 <text transform="translate(779.51 418.76) rotate(-61.9)" style="font-size: 33.29227828979492px;fill: #2b3990;font-family: Montserrat;font-weight: 700"> </text>
               </g>
-              <g id="TITLE">
-                <text transform="translate(76.28 292.93) rotate(-70.54)" style="font-size: 95.1204833984375px;fill: gold;font-family: Montserrat;font-weight: 700">S</text>
-                <text transform="translate(99.02 230.13) rotate(-50.58)" style="font-size: 95.12039184570312px;fill: gold;font-family: Montserrat;font-weight: 700">U</text>
-                <text transform="matrix(0.82, -0.58, 0.58, 0.82, 149.41, 171.54)" style="font-size: 95.12085723876953px;fill: gold;font-family: Montserrat;font-weight: 700">P</text>
-                <text transform="matrix(0.92, -0.4, 0.4, 0.92, 208.25, 131.17)" style="font-size: 95.12059783935547px;fill: gold;font-family: Montserrat;font-weight: 700">E</text>
-                <text transform="matrix(0.97, -0.24, 0.24, 0.97, 274.28, 102.94)" style="font-size: 95.12077331542969px;fill: gold;font-family: Montserrat;font-weight: 700">R</text>
-                <text transform="matrix(0.99, -0.13, 0.13, 0.99, 349.08, 86.67)" style="font-size: 95.12004089355469px;fill: gold;font-family: Montserrat;font-weight: 700"> </text>
-                <text transform="translate(377.5 82.22) rotate(-1.12)" style="font-size: 95.12053680419922px;fill: gold;font-family: Montserrat;font-weight: 700">B</text>
-                <text transform="translate(453.08 80.98) rotate(8.05)" style="font-size: 95.12078857421875px;fill: gold;font-family: Montserrat;font-weight: 700">O</text>
-                <text transform="matrix(0.94, 0.35, -0.35, 0.94, 534.31, 91.23)" style="font-size: 95.12064361572266px;fill: gold;font-family: Montserrat;font-weight: 700">W</text>
-                <text transform="translate(637.07 132.56) rotate(33.53)" style="font-size: 95.12061309814453px;fill: gold;font-family: Montserrat;font-weight: 700">L</text>
-                <text transform="translate(708.81 185.74) rotate(52.52)" style="font-size: 95.12088775634766px;fill: gold;font-family: Montserrat;font-weight: 700">5</text>
-                <text transform="translate(747.03 234.75) rotate(71.62)" style="font-size: 95.12030792236328px;fill: gold;font-family: Montserrat;font-weight: 700">0</text>
-              </g>
               <g id="BALL">
                 <path d="M699.45,405.75c-62.89-36.3-105.91-52.9-186.57-52.69s-117.23,15.37-176.77,49.58c-6.48,27.25-109.07,88.57-108.91,145,0.15,54.18,102.07,114.7,108.91,144.46,59.92,34.14,130,52.1,177.18,52,49.41-.14,126-20.55,189.09-57.94,6.81-31.7,70.69-87.06,70.54-137-0.15-55.43-66.73-115.48-73.47-143.4" transform="translate(-90.24 -230.66)" style="fill: #533420"/>
                 <path d="M812,546.27c-0.12-40.42-27.28-77.95-66.44-109.29,4,34.81,10,90.09,10.06,113.92,0.06,22.63-6,72.12-10.53,105.91,39.56-31.74,67-69.75,66.91-110.54" transform="translate(-90.24 -230.66)" style="fill: #533420"/>
@@ -86,11 +87,11 @@
             </svg>
           </div>
         </div>
-      </div>
-    </header>
-    <main class="row">
-    {{ content }}
-    </main>
+      </header>
+      <main class="row">
+      {{ content }}
+      </main>
+    </div>
     {% include footer.html %}
   </body>
 </html>

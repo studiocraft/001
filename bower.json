@@ -16,6 +16,10 @@
     "font-awesome": "latest",
     "jquery": "latest",
     "respond": "latest",
-    "animate.css": "latest"
+    "animate.css": "latest",
+    "QueryLoader2": "queryloader2#^3.0.15",
+    "gsap": "GreenSock-JS#^1.18.2",
+    "scrollmagic": "ScrollMagic#^2.0.5",
+    "bootstrap": "^3.3.6"
   }
 }

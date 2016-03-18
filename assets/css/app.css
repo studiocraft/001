@@ -1,21 +1,32 @@
 * {
   box-sizing: border-box; }
 
+html.locked {
+  position: fixed;
+  overflow: hidden; }
+
 html,
 body {
-  margin: 0;
-  padding: 0; }
+  margin: 1rem 0; }
 
 body {
   font-family: 'Montserrat', sans-serif;
   color: #fff;
-  background-color: #00aeff;
   font-size: 1.6rem; }
 
 img {
   display: block;
   max-width: 100%;
   margin: 0 auto; }
+
+#loaderOverlay {
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00aeff; }
 
 footer {
   padding-top: 8rem;
@@ -68,18 +79,26 @@ small {
   font-size: 80%; }
 
 header {
+  background-color: #00aeff;
   text-align: left;
   padding-top: 2rem;
   padding-right: 0;
   padding-bottom: 2rem;
   padding-left: 0;
-  position: relative; }
+  position: relative;
+  z-index: -1; }
   header .logo {
     display: inline-block;
-    width: 32rem; }
-  header .title-scene .animation {
-    opacity: 0; }
+    width: 36rem;
+    margin: 0 4rem; }
+  header .title-scene {
+    margin-top: 15%;
+    padding-bottom: 100%; }
+    header .title-scene .animation {
+      opacity: 0; }
 
+main .stadium-scene {
+  margin-top: -10%; }
 main .stadium-scene .animation,
 main .scoreboard-scene .animation,
 main .fifty-yard-scene .animation,
@@ -98,10 +117,6 @@ main .field {
   background-color: #2bb673;
   margin-top: -35%;
   overflow: hidden; }
-  main .field object {
-    -webkit-transform: rotate(-5deg);
-        -ms-transform: rotate(-5deg);
-            transform: rotate(-5deg); }
   main .field .yard-line {
     border-top: 2rem solid #fff;
     border-bottom: 0;
