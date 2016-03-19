@@ -70,32 +70,47 @@
             .setTween(fiftyYardTween)
             .addTo(scrollController);
 
-          var playersSceneTween = TweenMax.fromTo('#playersScene object', 0.2, {css:{transform: 'rotate(-5deg)'}}, {css:{transform: 'rotate(5deg)'},repeat: -1, yoyo: true}, 2);
-          var playersSceneHeight = $('#playersScene').height();
-          var playersScene = new ScrollMagic.Scene({ triggerElement: '#playersScene', offset: 0, duration: playersSceneHeight })
+          var fiftyYardPlayersTween = TweenMax.fromTo('#playersScene object', 0.2, {css:{transform: 'rotate(-5deg)'}}, {css:{transform: 'rotate(5deg)'},repeat: -1, yoyo: true}, 2);
+          var fiftyYardPlayersScene = new ScrollMagic.Scene({ triggerElement: '#playersScene', offset: 0 })
             .setClassToggle('body', 'playarsScene_active')
-            .setPin('#playersScene', {pushFollowers: false})
-            .setTween(playersSceneTween)
+            .setPin('#playersScene')
+            .setTween(fiftyYardPlayersTween)
             .addTo(scrollController);
 
           var thirtyYardSceneHeight = $('#thirtyYardScene').height();
           var thirtyYardTween = new TimelineMax();
-          thirtyYardTween.fromTo('#thirtyYardTextAnimation', 0.8, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
-            .fromTo('#brainGuyAnimation', 0.8, { css:{transform: 'translateX(100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
+          thirtyYardTween.to('#playersScene', 0.4, {opacity: 0.25})
+            .fromTo('#thirtyYardTextAnimation', 0.4, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
+            .fromTo('#brainGuyAnimation', 0.4, { css:{transform: 'translateX(100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
             .staggerFromTo('[data-name="lightbulb"]', 0.2, {css:{opacity: '0'}}, {css:{opacity: '1'}, repeat: 0 }, 0.1);
-          var thirtyYardScene = new ScrollMagic.Scene({ triggerElement: '#thirtyYardScene', offset:0})
+          var thirtyYardScene = new ScrollMagic.Scene({ triggerElement: '#thirtyYardScene', offset: -thirtyYardSceneHeight/2})
             .setClassToggle('body', 'thirtyYardScene_active')
             .setTween(thirtyYardTween)
             .addTo(scrollController);
 
+          var thirtyYardPlayersTween = new TimelineMax();
+          thirtyYardPlayersTween.to('#playersScene', 0.4, {opacity: 1});
+          var thirtyYardPlayersScene = new ScrollMagic.Scene({ triggerElement: '#thirtyYardScene', offset: thirtyYardSceneHeight*1.2})
+            .setClassToggle('body', 'thirtyYardPlayersPin_active')
+            .setTween(thirtyYardPlayersTween)
+            .addTo(scrollController);
+
           var tenYardSceneHeight = $('#tenYardScene').height();
           var tenYardTween = new TimelineMax();
-          tenYardTween.fromTo('#tenYardTextAnimation', 0.8, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
+          tenYardTween.to('#playersScene', 0.4, {opacity: 0.25})
+            .fromTo('#tenYardTextAnimation', 0.8, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
             .fromTo('#heartGuyAnimation', 0.8, { css:{transform: 'translateX(100px)', opacity: 0}}, {css:{transform: 'translateX(0px)', opacity: 1}})
             .fromTo('[data-name="heart"]', 0.6, {css:{strokeWidth: '1rem', stroke: '#FF4338'}}, {css:{strokeWidth: '0', stroke: '#FF4338'}, repeat: -1, yoyo: true }, 1);
           var tenYardScene = new ScrollMagic.Scene({ triggerElement: '#tenYardScene', offset: 0})
             .setClassToggle('body', 'tenYardScene_active')
             .setTween(tenYardTween)
+            .addTo(scrollController);
+
+          var tenYardPlayersTween = new TimelineMax();
+          tenYardPlayersTween.to('#playersScene', 0.4, {opacity: 1});
+          var tenYardPlayersScene = new ScrollMagic.Scene({ triggerElement: '#tenYardScene', offset: tenYardSceneHeight*1.2})
+            .setClassToggle('body', 'tenYardPlayersPin_active')
+            .setTween(tenYardPlayersTween)
             .addTo(scrollController);
 
           var endZoneSceneHeight = $('#endZoneScene').height();
@@ -109,22 +124,25 @@
 
           var chalkBoardSceneHeight = $('#chalkBoardScene').height();
           var chalkBoardTween = new TimelineMax();
-          chalkBoardTween.fromTo('#chalkBoardAnimation', 1.4, {css:{transform: 'translateY(240px)', opacity: 0}}, {css:{transform: 'translateY(0)', opacity: 1}});
-          var chalkBoardScene = new ScrollMagic.Scene({ triggerElement: '#chalkBoardScene', offset: -chalkBoardSceneHeight*2})
-            .setClassToggle('body', 'endZoneScene_active')
+          chalkBoardTween.fromTo('#chalkBoardAnimation', 1.4, {rotationX:0}, {rotationX:360});
+          var chalkBoardScene = new ScrollMagic.Scene({ triggerElement: '#chalkBoardScene', offset: 0})
+            .setClassToggle('body', 'chalkBoardScene_active')
             .setTween(chalkBoardTween)
             .addTo(scrollController);
 
-          introScene.addIndicators({name:'Intro - Offset: '+ introSceneHeight/4 +'px'});
-          stadiumScene.addIndicators({name:'Stadium - Offset: -'+ stadiumSceneHeight/2 +'px'});
-          scoreboardScene.addIndicators({name:'Scoreboard - Offset: '+ scoreboardSceneHeight/4 +'px'});
-          fiftyYardScene.addIndicators({name:'Fifty Yard - Offset: '+ 0 +'px'});
-          playersScene.addIndicators({name:'Players Pin - Offset: '+ playersSceneHeight +'px'});
-          thirtyYardScene.addIndicators({name:'Thirty Yard - Offset: '+ 0 +'px'});
-          chalkBoardScene.addIndicators({name:'Chalkboard Scene - Offset: -'+ chalkBoardSceneHeight*2 +'px'});
-          endZoneScene.addIndicators({name:'End Zone - Offset: '+ endZoneSceneHeight/4 +'px'});
-          tenYardScene.addIndicators({name:'Ten Yard - Offset: '+ 0 +'px'});
-
+          // introScene.addIndicators({name:'Intro - Offset: '+ introSceneHeight/2 +'px'});
+          // stadiumScene.addIndicators({name:'Stadium - Offset: -'+ stadiumSceneHeight/2 +'px'});
+          // scoreboardScene.addIndicators({name:'Scoreboard - Offset: '+ scoreboardSceneHeight/4 +'px'});
+          // fiftyYardScene.addIndicators({name:'Fifty Yard - Offset: '+ 0 +'px'});
+          // fiftyYardPlayersScene.addIndicators({name:'Original Players - Offset: '+ 0 +'px'});
+          // thirtyYardScene.addIndicators({name:'Thirty Yard - Offset: '+ 0 +'px'});
+          // thirtyYardPlayersScene.addIndicators({name:'50 to 30 Players - Offset: '+ 0 +'px'});
+          // tenYardScene.addIndicators({name:'Ten Yard - Offset: '+ 0 +'px'});
+          // tenYardPlayersScene.addIndicators({name:'30 to 10 Players - Offset: '+ 0 +'px'});
+          //
+          //
+          // chalkBoardScene.addIndicators({name:'Chalkboard Scene - Offset: -'+ chalkBoardSceneHeight*2 +'px'});
+          // endZoneScene.addIndicators({name:'End Zone - Offset: '+ endZoneSceneHeight/4 +'px'});
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
