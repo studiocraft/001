@@ -96,12 +96,13 @@
 
           var endZoneSceneHeight = $('#endZoneScene').height();
           var endZoneTween = new TimelineMax();
-          endZoneTween.fromTo('#endZoneTextAnimation', 0.8, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}});
-          var endZoneScene = new ScrollMagic.Scene({ triggerElement: '#endZoneScene', offset: 0})
+          endZoneTween.fromTo('#endZoneTextAnimation', 0.8, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
+          .fromTo('#goalPostAnimation', 1.4, {css:{transform: 'translateY(100px)', opacity: 0}}, {css:{transform: 'translateY(0)', opacity: 1}});
+          var endZoneScene = new ScrollMagic.Scene({ triggerElement: '#endZoneScene', offset: endZoneSceneHeight/4})
             .setClassToggle('body', 'endZoneScene_active')
             .setTween(endZoneTween)
             .addTo(scrollController);
-          endZoneScene.addIndicators({name:'End Zone - Offset: '+ 0 +'px'});
+          endZoneScene.addIndicators({name:'End Zone - Offset: '+ endZoneSceneHeight/4 +'px'});
 
           //
           // var actOnePinTween = TweenMax.fromTo('#playersGroupOne td object', 0.2, {css:{transform: 'rotate(-5deg)'}}, {css:{transform: 'rotate(5deg)'},repeat: -1, yoyo: true}, 2);

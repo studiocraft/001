@@ -1,24 +1,29 @@
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 html.locked {
   position: fixed;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 body {
   font-family: 'Montserrat', sans-serif;
-  color: #fff;
-  font-size: 1.6rem; }
+  color: #FFFFFF;
+  font-size: 1.6rem;
+}
 
 img {
   display: block;
   max-width: 100%;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 img.icon-logo {
   padding-top: 6rem;
   padding-bottom: 0;
-  width: 6rem; }
+  width: 6rem;
+}
 
 #loaderOverlay {
   position: fixed;
@@ -28,156 +33,195 @@ img.icon-logo {
   width: 100%;
   height: 100%;
   padding: 20rem;
-  color: #2b3990;
-  background: #fff; }
-  #loaderOverlay img.icon-logo {
-    width: 10rem;
-    padding-bottom: 4rem; }
+  color: #2B3990;
+  background: #FFFFFF;
+}
+#loaderOverlay img.icon-logo {
+  width: 10rem;
+  padding-bottom: 4rem;
+}
 
 footer {
   padding-top: 8rem;
   padding-bottom: 4rem;
-  background-color: #ffd700;
-  color: #2b3990;
-  text-align: center; }
-  footer h1, footer h2, footer h3,
-  footer h4, footer h5, footer h6 {
-    color: inherit; }
+  background-color: #FFD700;
+  color: #2B3990;
+  text-align: center;
+}
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6 {
+  color: inherit;
+}
 
-h1, h2, h3, h4, h5, h6 {
-  color: #ffd700;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #FFD700;
   font-weight: bold;
-  letter-spacing: .2rem;
-  text-rendering: optimizeLegibility; }
+  letter-spacing: 0.2rem;
+  text-rendering: optimizeLegibility;
+}
 
 h1 {
   font-size: 4.8rem;
-  margin: 2.4rem 0 1.2rem; }
+  margin: 2.4rem 0 1.2rem;
+}
 
 h2 {
   font-size: 3.6rem;
-  margin: 1.8rem 0 1.2rem; }
+  margin: 1.8rem 0 1.2rem;
+}
 
 h3 {
   font-size: 2.8rem;
-  margin: 1.4rem 0 1.2rem; }
+  margin: 1.4rem 0 1.2rem;
+}
 
 h4 {
   font-size: 1.8rem;
-  margin: 1.2rem 0 0.8rem; }
+  margin: 1.2rem 0 0.8rem;
+}
 
 h5 {
   font-size: 1.6rem;
-  margin: 1.2rem 0 0.8rem; }
+  margin: 1.2rem 0 0.8rem;
+}
 
 h6 {
   font-size: 1.4rem;
-  margin: 0.8rem 0 0.4rem; }
+  margin: 0.8rem 0 0.4rem;
+}
 
 p {
-  letter-spacing: .1rem; }
+  letter-spacing: 0.1rem;
+}
 
 small {
-  font-size: 80%; }
+  font-size: 80%;
+}
 
 header {
-  background-color: #00aeff;
+  background-color: #00AEFF;
   text-align: left;
   padding-top: 2rem;
   padding-right: 0;
   padding-bottom: 2rem;
   padding-left: 0;
   position: relative;
-  z-index: -1; }
-  header .logo {
-    display: inline-block;
-    width: 36rem;
-    margin: 0 4rem; }
-  header .intro-scene {
-    padding-bottom: 96.6rem; }
+  z-index: -1;
+}
+header .logo {
+  display: inline-block;
+  width: 36rem;
+  margin: 0 4rem;
+}
+header .intro-scene {
+  padding-bottom: 96.6rem;
+}
 
 main .stadium-scene {
-  margin-top: -9.66rem; }
+  margin-top: -9.66rem;
+}
 main .scoreboard-scene {
-  margin-bottom: 3.66rem; }
+  margin-bottom: 3.66rem;
+}
 main .thirty-yard-scene,
 main .ten-yard-scene {
   position: absolute;
-  bottom: 0; }
+  bottom: 0;
+}
 main .end-zone-scene {
-  background-image: -webkit-linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80), -webkit-linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80);
-  background-image: linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80), linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80);
+  background-image: -webkit-linear-gradient(45deg, #30CB80 25%, transparent 25%, transparent 75%, #30CB80 75%, #30CB80), -webkit-linear-gradient(45deg, #30CB80 25%, transparent 25%, transparent 75%, #30CB80 75%, #30CB80);
+  background-image:         linear-gradient(45deg, #30CB80 25%, transparent 25%, transparent 75%, #30CB80 75%, #30CB80), linear-gradient(45deg, #30CB80 25%, transparent 25%, transparent 75%, #30CB80 75%, #30CB80);
   background-size: 16rem 16rem;
-  background-position: 0 0, 8rem 8rem; }
+  background-position: 0 0, 8rem 8rem;
+}
 main .field {
-  background-color: #2bb673;
+  background-color: #2BB673;
   margin-top: -35%;
-  overflow: hidden; }
-  main .field .yard-line {
-    position: relative;
-    border-top: 2rem solid #fff;
-    border-bottom: 0;
-    margin: 0;
-    color: #fff;
-    font-family: 'Ultra', serif;
-    letter-spacing: 1rem;
-    font-size: 10rem;
-    clear: both; }
-    main .field .yard-line::before {
-      position: absolute;
-      right: 0;
-      content: '';
-      -webkit-transform: rotate(180deg);
-          -ms-transform: rotate(180deg);
-              transform: rotate(180deg);
-      text-align: center;
-      -webkit-writing-mode: vertical-lr;
-          -ms-writing-mode: tb-lr;
-              writing-mode: vertical-lr; }
-  main .field .fifty::before {
-    content: '50'; }
-  main .field .thirty::before {
-    content: '30'; }
-  main .field .ten::before {
-    content: '10'; }
-  main .field .zero::before {
-    content: '0'; }
-  main .field .hash-line {
-    position: relative;
-    height: 1940px;
-    height: 250vh;
-    width: 100%;
-    width: 100vw;
-    border-top: 0;
-    border-bottom: 0;
-    clear: both; }
-    main .field .hash-line::before {
-      float: left;
-      display: block;
-      content: '';
-      width: 1.5rem;
-      margin-top: 388px;
-      margin-top: 50vh;
-      border-top: 2rem solid #fff;
-      height: 388px;
-      height: 50vh;
-      border-bottom: 2rem solid #fff;
-      margin-bottom: 388px;
-      margin-bottom: 50vh;
-      clear: both; }
-    main .field .hash-line::after {
-      float: left;
-      display: block;
-      content: '';
-      width: 1.5rem;
-      border-top: 2rem solid #fff;
-      height: 388px;
-      height: 50vh;
-      border-bottom: 2rem solid #fff;
-      margin-bottom: 388px;
-      margin-bottom: 50vh;
-      box-sizing: content-box;
-      clear: both; }
+  overflow: hidden;
+}
+main .field .yard-line {
+  position: relative;
+  border-top: 2rem solid #FFFFFF;
+  border-bottom: 0;
+  margin: 0;
+  color: #FFFFFF;
+  font-family: 'Ultra', serif;
+  letter-spacing: 1rem;
+  font-size: 10rem;
+  clear: both;
+}
+main .field .yard-line::before {
+  position: absolute;
+  right: 0;
+  content: '';
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  text-align: center;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+}
+main .field .fifty::before {
+  content: '50';
+}
+main .field .thirty::before {
+  content: '30';
+}
+main .field .ten::before {
+  content: '10';
+}
+main .field .zero::before {
+  content: '0';
+}
+main .field .hash-line {
+  position: relative;
+  height: 1940px;
+  height: 250vh;
+  width: 100%;
+  width: 100vw;
+  border-top: 0;
+  border-bottom: 0;
+  clear: both;
+}
+main .field .hash-line::before {
+  float: left;
+  display: block;
+  content: '';
+  width: 1.5rem;
+  margin-top: 388px;
+  margin-top: 50vh;
+  border-top: 2rem solid #FFFFFF;
+  height: 388px;
+  height: 50vh;
+  border-bottom: 2rem solid #FFFFFF;
+  margin-bottom: 388px;
+  margin-bottom: 50vh;
+  clear: both;
+}
+main .field .hash-line::after {
+  float: left;
+  display: block;
+  content: '';
+  width: 1.5rem;
+  border-top: 2rem solid #FFFFFF;
+  height: 388px;
+  height: 50vh;
+  border-bottom: 2rem solid #FFFFFF;
+  margin-bottom: 388px;
+  margin-bottom: 50vh;
+  box-sizing: content-box;
+  clear: both;
+}
 
 
 
