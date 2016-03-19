@@ -3,19 +3,17 @@
   <head>
   {% include head.html %}
   </head>
-  <body id="{{ page.slug }}">
+  <body id="{{ page.slug }}" class="container-fluid">
     <div id="loaderOverlay" class="text-center">
       <img class="icon-logo" src="{{ site.baseurl }}/assets/svg/icon.svg">
-      <h1 class="animated pulse infinite">Loading ...</h1>
+      <p class="animated pulse infinite">Loading ...</p>
     </div>
-    <div class="container">
       <header class="row">
         <img class="logo animated fadeIn" src="{{ site.baseurl }}/assets/svg/logo.svg">
-        <div id="titleScene" class="title-scene">
-          <div id="titleAnimation" class="animation col-md-10 col-md-offset-1">
-            <svg id="Header" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 845.03 598.92">
-              <title>header</title>
-              <g id="title">
+        <div id="introScene" class="intro-scene">
+          <div id="introAnimation" class="animation col-md-push-2 col-md-8">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 845.03 598.92">
+              <g id="intro">
                 <text transform="translate(76.28 292.93) rotate(-70.54)" style="font-size: 95.1204833984375px;fill: gold;font-family: Montserrat;font-weight: 700">S</text>
                 <text transform="translate(99.02 230.13) rotate(-50.58)" style="font-size: 95.12039184570312px;fill: gold;font-family: Montserrat;font-weight: 700">U</text>
                 <text transform="matrix(0.82, -0.58, 0.58, 0.82, 149.41, 171.54)" style="font-size: 95.12085723876953px;fill: gold;font-family: Montserrat;font-weight: 700">P</text>
@@ -90,7 +88,6 @@
       <main class="row">
       {{ content }}
       </main>
-    </div>
     {% include footer.html %}
   </body>
 </html>

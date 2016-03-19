@@ -10,9 +10,7 @@ html.locked {
 }
 
 html,
-body {
-  margin: 1.8rem 0;
-}
+body {}
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -44,7 +42,8 @@ img.icon-logo {
   background: $white;
 
   img.icon-logo {
-    width: 20rem;
+    width: 10rem;
+    padding-bottom: 4rem;
   }
 }
 

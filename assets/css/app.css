@@ -5,10 +5,6 @@ html.locked {
   position: fixed;
   overflow: hidden; }
 
-html,
-body {
-  margin: 1.8rem 0; }
-
 body {
   font-family: 'Montserrat', sans-serif;
   color: #fff;
@@ -35,7 +31,8 @@ img.icon-logo {
   color: #2b3990;
   background: #fff; }
   #loaderOverlay img.icon-logo {
-    width: 20rem; }
+    width: 10rem;
+    padding-bottom: 4rem; }
 
 footer {
   padding-top: 8rem;
@@ -96,21 +93,18 @@ header {
     display: inline-block;
     width: 36rem;
     margin: 0 4rem; }
-  header .title-scene {
-    padding-bottom: 100%; }
+  header .intro-scene {
+    padding-bottom: 96.6rem; }
 
 main .stadium-scene {
-  margin-top: -10%; }
-main .stadium-scene .animation,
-main .scoreboard-scene .animation,
-main .fifty-yard-scene .animation,
-main .voice-guy-scene .animation,
-main .thirty-yard-scene .animation,
-main .ten-yard-scene .animation,
-main .end-zone-scene .animation {
-  display: block; }
+  margin-top: -9.66rem; }
+main .scoreboard-scene {
+  margin-bottom: 3.66rem; }
+main .thirty-yard-scene,
+main .ten-yard-scene {
+  position: absolute;
+  bottom: 0; }
 main .end-zone-scene {
-  background-color: #2bb673;
   background-image: -webkit-linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80), -webkit-linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80);
   background-image: linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80), linear-gradient(45deg, #30cb80 25%, transparent 25%, transparent 75%, #30cb80 75%, #30cb80);
   background-size: 16rem 16rem;
@@ -120,6 +114,7 @@ main .field {
   margin-top: -35%;
   overflow: hidden; }
   main .field .yard-line {
+    position: relative;
     border-top: 2rem solid #fff;
     border-bottom: 0;
     margin: 0;
@@ -129,16 +124,16 @@ main .field {
     font-size: 10rem;
     clear: both; }
     main .field .yard-line::before {
-      float: right;
+      position: absolute;
+      right: 0;
       content: '';
       -webkit-transform: rotate(180deg);
           -ms-transform: rotate(180deg);
               transform: rotate(180deg);
-      height: 20rem;
+      text-align: center;
       -webkit-writing-mode: vertical-lr;
           -ms-writing-mode: tb-lr;
-              writing-mode: vertical-lr;
-      clear: both; }
+              writing-mode: vertical-lr; }
   main .field .fifty::before {
     content: '50'; }
   main .field .thirty::before {
@@ -148,48 +143,39 @@ main .field {
   main .field .zero::before {
     content: '0'; }
   main .field .hash-line {
-    border-top: 0 solid transparent;
+    position: relative;
+    height: 1940px;
+    height: 250vh;
+    width: 100%;
+    width: 100vw;
+    border-top: 0;
     border-bottom: 0;
-    margin: 0;
-    padding: 0;
     clear: both; }
-    main .field .hash-line.first::before {
+    main .field .hash-line::before {
       float: left;
       display: block;
       content: '';
       width: 1.5rem;
+      margin-top: 388px;
+      margin-top: 50vh;
       border-top: 2rem solid #fff;
-      height: 20rem;
+      height: 388px;
+      height: 50vh;
       border-bottom: 2rem solid #fff;
-      margin-bottom: 20rem;
-      box-sizing: content-box;
+      margin-bottom: 388px;
+      margin-bottom: 50vh;
       clear: both; }
-    main .field .hash-line.first::after {
+    main .field .hash-line::after {
       float: left;
       display: block;
       content: '';
       width: 1.5rem;
       border-top: 2rem solid #fff;
-      height: 20rem;
+      height: 388px;
+      height: 50vh;
       border-bottom: 2rem solid #fff;
-      box-sizing: content-box;
-      clear: both; }
-    main .field .hash-line.second::before {
-      float: left;
-      display: block;
-      content: '';
-      width: 1.5rem;
-      border-top: 2rem solid #fff;
-      margin-bottom: 20rem;
-      box-sizing: content-box;
-      clear: both; }
-    main .field .hash-line.second::after {
-      float: left;
-      display: block;
-      content: '';
-      width: 1.5rem;
-      border-top: 2rem solid #fff;
-      margin-bottom: 20rem;
+      margin-bottom: 388px;
+      margin-bottom: 50vh;
       box-sizing: content-box;
       clear: both; }
 
