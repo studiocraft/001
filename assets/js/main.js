@@ -43,7 +43,6 @@
             .setPin('#introScene', {pushFollowers: true})
             .setTween(introTextTween)
             .addTo(scrollController);
-          introScene.addIndicators({name:'Intro - Offset: '+ introSceneHeight/2 +'px'});
 
           var stadiumSceneHeight = $('#stadiumScene').height();
           var stadiumTween = TweenMax.staggerFromTo('[data-name="light"]', 0.5, {css:{fill: '#ffffff'}}, {css:{fill: 'transparent'}, repeat: 4, yoyo: true}, 1);
@@ -51,7 +50,6 @@
             .setClassToggle('body', 'stadiumScene_active')
             .setTween(stadiumTween)
             .addTo(scrollController);
-          stadiumScene.addIndicators({name:'Stadium - Offset: -'+ stadiumSceneHeight/2 +'px'});
 
           var scoreboardSceneHeight = $('#scoreboardScene').height();
           var scoreboardTween = TweenMax.fromTo('#scoreboardAnimation', 1.4, {css:{transform: 'translateY(100px)', opacity: 0}}, {css:{transform: 'translateY(0)', opacity: 1}});
@@ -59,7 +57,6 @@
             .setClassToggle('body', 'scoreboardScene_active')
             .setTween(scoreboardTween)
             .addTo(scrollController);
-          scoreboardScene.addIndicators({name:'Scoreboard - Offset: '+ scoreboardSceneHeight/4 +'px'});
 
           var fiftyYardSceneHeight = $('#fiftyYardScene').height();
           var fiftyYardTween = new TimelineMax();
@@ -70,7 +67,6 @@
             .setClassToggle('body', 'fiftyYardScene_active')
             .setTween(fiftyYardTween)
             .addTo(scrollController);
-          fiftyYardScene.addIndicators({name:'Fifty Yard - Offset: '+ 0 +'px'});
 
           var playersSceneTween = TweenMax.fromTo('#playersScene object', 0.2, {css:{transform: 'rotate(-5deg)'}}, {css:{transform: 'rotate(5deg)'},repeat: -1, yoyo: true}, 2);
           var playersSceneHeight = $('#playersScene').height();
@@ -79,7 +75,6 @@
             .setPin('#playersScene', {pushFollowers: false})
             .setTween(playersSceneTween)
             .addTo(scrollController);
-          playersScene.addIndicators({name:'Players Pin - Offset: '+ playersSceneHeight +'px'});
 
           var thirtyYardSceneHeight = $('#thirtyYardScene').height();
           var thirtyYardTween = new TimelineMax();
@@ -90,7 +85,6 @@
             .setClassToggle('body', 'thirtyYardScene_active')
             .setTween(thirtyYardTween)
             .addTo(scrollController);
-          thirtyYardScene.addIndicators({name:'Thirty Yard - Offset: '+ 0 +'px'});
 
           var tenYardSceneHeight = $('#tenYardScene').height();
           var tenYardTween = new TimelineMax();
@@ -101,7 +95,6 @@
             .setClassToggle('body', 'tenYardScene_active')
             .setTween(tenYardTween)
             .addTo(scrollController);
-          tenYardScene.addIndicators({name:'Ten Yard - Offset: '+ 0 +'px'});
 
           var endZoneSceneHeight = $('#endZoneScene').height();
           var endZoneTween = new TimelineMax();
@@ -111,7 +104,6 @@
             .setClassToggle('body', 'endZoneScene_active')
             .setTween(endZoneTween)
             .addTo(scrollController);
-          endZoneScene.addIndicators({name:'End Zone - Offset: '+ endZoneSceneHeight/4 +'px'});
 
           var chalkBoardSceneHeight = $('#chalkBoardScene').height();
           var chalkBoardTween = new TimelineMax();
@@ -120,7 +112,6 @@
             .setClassToggle('body', 'endZoneScene_active')
             .setTween(chalkBoardTween)
             .addTo(scrollController);
-          chalkBoardScene.addIndicators({name:'Chalkboard Scene - Offset: -'+ chalkBoardSceneHeight*2 +'px'});
 
           //
           // var actOnePinTween = TweenMax.fromTo('#playersGroupOne td object', 0.2, {css:{transform: 'rotate(-5deg)'}}, {css:{transform: 'rotate(5deg)'},repeat: -1, yoyo: true}, 2);
@@ -243,6 +234,16 @@
           // encorePin.addIndicators({name:titleScene});
           //
           // recapScene.addIndicators({name:titleScene});
+
+          // introScene.addIndicators({name:'Intro - Offset: '+ introSceneHeight/2 +'px'});
+          // stadiumScene.addIndicators({name:'Stadium - Offset: -'+ stadiumSceneHeight/2 +'px'});
+          // scoreboardScene.addIndicators({name:'Scoreboard - Offset: '+ scoreboardSceneHeight/4 +'px'});
+          // fiftyYardScene.addIndicators({name:'Fifty Yard - Offset: '+ 0 +'px'});
+          // playersScene.addIndicators({name:'Players Pin - Offset: '+ playersSceneHeight +'px'});
+          // thirtyYardScene.addIndicators({name:'Thirty Yard - Offset: '+ 0 +'px'});
+          // chalkBoardScene.addIndicators({name:'Chalkboard Scene - Offset: -'+ chalkBoardSceneHeight*2 +'px'});
+          // endZoneScene.addIndicators({name:'End Zone - Offset: '+ endZoneSceneHeight/4 +'px'});
+          // tenYardScene.addIndicators({name:'Ten Yard - Offset: '+ 0 +'px'});
 
       },
       finalize: function() {
