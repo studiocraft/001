@@ -207,7 +207,7 @@ slug: home
         <h2>Retransmission</h2>
         <p>Marketers and consumers alike know that advertising during the Super Bowl is all about generating buzz. In fact, both teams eagerly anticipate the action and energy that come from those great ads! Here is the starting line up of ads that had the best retransmission scores, an Ipsos derived measure that predicts the degree to which ad content gets passed along, or helped along, or otherwise shared in some way by consumers.</p>
       </div>
-      <div id="voiceGuyAnimation" class="voice-guy-scene animation col-md-push-1 col-md-5">
+      <div id="voiceGuyAnimation" class="animation col-md-push-1 col-md-5">
         <svg id="Voice" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 484.86 429.06">
           <title>voice</title>
           <g>
@@ -233,8 +233,8 @@ slug: home
   <section class="hash-line">
 
     <!-- Player Lineup Scene -->
-    <div class="container-fluid players-scene">
-      <div class="row text-center">
+    <div id="playersScene" class="container-fluid players-scene">
+      <div class="text-center">
         <div class="col-xs-push-1 col-xs-1">
           <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/doritos.svg" id="doritosDogsOne" class="animation"></object>
           <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" data-name="flag" class="animation"></object>
@@ -296,7 +296,7 @@ slug: home
           <h2>Remember The Brand</h2>
           <p>But that’s not to say all buzz-worthy ads created a similar response for the brand. In fact, some campaigns, while great at getting people to pass along content, actually fail to get consumers to recall the brand behind the message! Here are the ads that advanced to the 30-yard line,  scoring highest in Retained Branded Recognition (getting people to remember the brand) and ultimately giving the brand the credit they deserved:</p>
         </div>
-        <div id="brainGuyAnimation" class="brain-guy-scene animation col-md-push-1 col-md-4">
+        <div id="brainGuyAnimation" class="animation col-md-push-1 col-md-4">
           <svg id="Brain" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 322.28 377.65">
             <title>brain</title>
             <g>
@@ -338,7 +338,7 @@ slug: home
           <h2>Positive Attributes <br>(feel good about the brand)</h2>
           <p>Positive Attributes (Feel good about the brand), the trifecta when it comes to positive ad experience actually relies on generating a positive reaction among consumers themselves! And generating buzz and brand recognition doesn’t automatically mean consumers will end up having something positive to say. Here are the ads that advanced to the 10-yard line, making people feel good about the brand:</p>
         </div>
-        <div id="heartGuyAnimation" class="heart-guy-scene animation col-md-push-1 col-md-4">
+        <div id="heartGuyAnimation" class="animation col-md-push-1 col-md-4">
           <svg id="Heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 322.28 377.65">
             <title>heart</title>
             <g>
@@ -369,8 +369,10 @@ slug: home
     <div id="goalPostAnimation" class="animation goal-post-scene">
       <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/goalposts.svg" class="animation"></object>
     </div>
-    <div id="chalkBoardAnimation" class="animation container chalk-board-scene">
-      <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/chalkboard.svg" class="animation"></object>
+    <section id="chalkBoardScene" class="container chalk-board-scene">
+      <div id="chalkBoardAnimation" class="animation">
+        <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/chalkboard.svg" class="animation"></object>
+      </div>
     </div>
   </section>
 

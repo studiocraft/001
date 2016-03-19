@@ -47,6 +47,10 @@ main {
     bottom: 0;
   }
 
+  .players-scene {
+    margin-top: 6.66rem;
+  }
+
   .end-zone-scene {
     background-image: linear-gradient(45deg, lighten($green, 5%) 25%, transparent 25%, transparent 75%, lighten($green, 5%) 75%, lighten($green, 5%)),
     linear-gradient(45deg, lighten($green, 5%) 25%, transparent 25%, transparent 75%, lighten($green, 5%) 75%, lighten($green, 5%));
@@ -73,10 +77,10 @@ main {
       &::before {
         position: absolute;
         right: 0;
+        top: 3.66rem;
         content: '';
-        transform: rotate(180deg);
+        transform: rotate(-90deg);
         text-align: center;
-        writing-mode: vertical-lr;
       }
     }
 
