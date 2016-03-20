@@ -133,7 +133,7 @@ main .field {
     color: #fff;
     font-family: 'Ultra', serif;
     letter-spacing: 1rem;
-    font-size: 10rem;
+    font-size: 7rem;
     clear: both; }
     main .field .yard-line::before {
       position: absolute;
