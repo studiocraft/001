@@ -35,7 +35,7 @@
 
           var introSceneHeight = $('#introAnimation').height();
           var titleTextTween = new TimelineMax();
-          titleTextTween.staggerFromTo('#intro > text', 0.4, {opacity: 0}, {opacity: 1}, 0.2);
+          titleTextTween.staggerFromTo('#intro > #letters > path', 0.4, {opacity: 0}, {opacity: 1}, 0.2);
 
           var introTextTween = new TimelineMax();
           introTextTween.fromTo('#ball', 0.8, {scale: 0, opacity: 0}, {scale: 1, opacity: 1})
@@ -115,7 +115,7 @@
           var endZoneSceneHeight = $('#endZoneScene').height();
           var endZoneTween = new TimelineMax();
           endZoneTween.fromTo('#endZoneTextAnimation', 0.8, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
-            .fromTo('#goalPostAnimation', 1.4, {css:{transform: 'translateY(240px)', opacity: 0}}, {css:{transform: 'translateY(0)', opacity: 1}});
+            .fromTo('#goalPostAnimation', 0.8, {css:{transform: 'translateY(240px)', opacity: 0}}, {css:{transform: 'translateY(0)', opacity: 1}});
           var endZoneScene = new ScrollMagic.Scene({ triggerElement: '#endZoneScene', offset: endZoneSceneHeight/4})
             .on("start", function (e) {
               var eventTween = new TimelineMax();
@@ -144,8 +144,8 @@
 
           var chalkBoardSceneHeight = $('#chalkBoardScene').height();
           var chalkBoardTween = new TimelineMax();
-          chalkBoardTween.fromTo('#chalkBoardAnimation', 1.4, {rotationX:0}, {rotationX:360});
-          var chalkBoardScene = new ScrollMagic.Scene({ triggerElement: '#chalkBoardScene', offset: 0})
+          chalkBoardTween.fromTo('#Board', 2.4, {transformOrigin: 'center center',rotationX:360}, {transformOrigin: 'center center', rotationX:0});
+          var chalkBoardScene = new ScrollMagic.Scene({ triggerElement: '#chalkBoardScene', offset: chalkBoardSceneHeight/3})
             .setClassToggle('body', 'chalkBoardScene_active')
             .setTween(chalkBoardTween)
             .addTo(scrollController);
