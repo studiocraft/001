@@ -70,13 +70,6 @@
             .setTween(fiftyYardTween)
             .addTo(scrollController);
 
-          var fiftyYardPlayersTween = TweenMax.fromTo('#playersScene object', 0.2, {css:{transform: 'rotate(-5deg)'}}, {css:{transform: 'rotate(5deg)'},repeat: -1, yoyo: true}, 2);
-          var fiftyYardPlayersScene = new ScrollMagic.Scene({ triggerElement: '#playersScene', offset: 0 })
-            .setClassToggle('body', 'playarsScene_active')
-            .setPin('#playersScene')
-            .setTween(fiftyYardPlayersTween)
-            .addTo(scrollController);
-
           var thirtyYardSceneHeight = $('#thirtyYardScene').height();
           var thirtyYardTween = new TimelineMax();
           thirtyYardTween.to('#playersScene', 0.4, {opacity: 0.25})
@@ -89,7 +82,9 @@
             .addTo(scrollController);
 
           var thirtyYardPlayersTween = new TimelineMax();
-          thirtyYardPlayersTween.to('#playersScene', 0.4, {opacity: 1});
+          thirtyYardPlayersTween.to('#playersScene', 0.4, {opacity: 1})
+            .to('.foulThirty', 1, {opacity: 0, scale: 0}, 'foul')
+            .fromTo('.flagThirty', 1, {opacity: 0, scale: 0}, {opacity: 1, scale: 1}, 'foul');
           var thirtyYardPlayersScene = new ScrollMagic.Scene({ triggerElement: '#thirtyYardScene', offset: thirtyYardSceneHeight*1.2})
             .setClassToggle('body', 'thirtyYardPlayersPin_active')
             .setTween(thirtyYardPlayersTween)
@@ -98,6 +93,8 @@
           var tenYardSceneHeight = $('#tenYardScene').height();
           var tenYardTween = new TimelineMax();
           tenYardTween.to('#playersScene', 0.4, {opacity: 0.25})
+            .to('.flagThirty', 1, {opacity: 0, scale: 0}, 'reset')
+            .to('.foulThirty', 1, {opacity: 1, scale: 1}, 'reset')
             .fromTo('#tenYardTextAnimation', 0.8, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
             .fromTo('#heartGuyAnimation', 0.8, { css:{transform: 'translateX(100px)', opacity: 0}}, {css:{transform: 'translateX(0px)', opacity: 1}})
             .fromTo('[data-name="heart"]', 0.6, {css:{strokeWidth: '1rem', stroke: '#FF4338'}}, {css:{strokeWidth: '0', stroke: '#FF4338'}, repeat: -1, yoyo: true }, 1);
@@ -107,7 +104,9 @@
             .addTo(scrollController);
 
           var tenYardPlayersTween = new TimelineMax();
-          tenYardPlayersTween.to('#playersScene', 0.4, {opacity: 1});
+          tenYardPlayersTween.to('#playersScene', 0.4, {opacity: 1})
+          .to('.foulTen', 1, {opacity: 0, scale: 0}, 'foul')
+          .fromTo('.flagTen', 1, {opacity: 0, scale: 0}, {opacity: 1, scale: 1}, 'foul');
           var tenYardPlayersScene = new ScrollMagic.Scene({ triggerElement: '#tenYardScene', offset: tenYardSceneHeight*1.2})
             .setClassToggle('body', 'tenYardPlayersPin_active')
             .setTween(tenYardPlayersTween)
@@ -116,11 +115,32 @@
           var endZoneSceneHeight = $('#endZoneScene').height();
           var endZoneTween = new TimelineMax();
           endZoneTween.fromTo('#endZoneTextAnimation', 0.8, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
-          .fromTo('#goalPostAnimation', 1.4, {css:{transform: 'translateY(240px)', opacity: 0}}, {css:{transform: 'translateY(0)', opacity: 1}});
+            .fromTo('#goalPostAnimation', 1.4, {css:{transform: 'translateY(240px)', opacity: 0}}, {css:{transform: 'translateY(0)', opacity: 1}});
           var endZoneScene = new ScrollMagic.Scene({ triggerElement: '#endZoneScene', offset: endZoneSceneHeight/4})
+            .on("start", function (e) {
+              var eventTween = new TimelineMax();
+              eventTween.to('#playersScene', 0.4, {opacity: 1})
+              .to('.lose', 1, {opacity: 0}, 'disappear')
+              .to('.titleLose', 1, { opacity: 0}, 'disappear');
+            })
+            .on("leave", function (e) {
+              var eventTween = new TimelineMax();
+              eventTween.to('#playersScene', 0.4, {opacity: 0.25})
+              .to('.lose', 1, {opacity: 1}, 'show')
+              .to('.titleLose', 1, { opacity: 1}, 'show');
+            })
             .setClassToggle('body', 'endZoneScene_active')
             .setTween(endZoneTween)
             .addTo(scrollController);
+
+            var endZonePlayersTween = new TimelineMax();
+            endZonePlayersTween.to('#playersScene', 0.4, {opacity: 0.25})
+              .to('.flagTen', 1, {opacity: 0, scale: 0}, 'reset')
+              .to('.foulTen', 1, {opacity: 1, scale: 1}, 'reset');
+            var endZonePlayersScene = new ScrollMagic.Scene({ triggerElement: '#endZoneScene', offset: -endZoneSceneHeight/4})
+              .setClassToggle('body', 'endZoneReset_active')
+              .setTween(endZonePlayersTween)
+              .addTo(scrollController);
 
           var chalkBoardSceneHeight = $('#chalkBoardScene').height();
           var chalkBoardTween = new TimelineMax();
@@ -130,19 +150,33 @@
             .setTween(chalkBoardTween)
             .addTo(scrollController);
 
-          // introScene.addIndicators({name:'Intro - Offset: '+ introSceneHeight/2 +'px'});
-          // stadiumScene.addIndicators({name:'Stadium - Offset: -'+ stadiumSceneHeight/2 +'px'});
-          // scoreboardScene.addIndicators({name:'Scoreboard - Offset: '+ scoreboardSceneHeight/4 +'px'});
-          // fiftyYardScene.addIndicators({name:'Fifty Yard - Offset: '+ 0 +'px'});
-          // fiftyYardPlayersScene.addIndicators({name:'Original Players - Offset: '+ 0 +'px'});
-          // thirtyYardScene.addIndicators({name:'Thirty Yard - Offset: '+ 0 +'px'});
-          // thirtyYardPlayersScene.addIndicators({name:'50 to 30 Players - Offset: '+ 0 +'px'});
-          // tenYardScene.addIndicators({name:'Ten Yard - Offset: '+ 0 +'px'});
-          // tenYardPlayersScene.addIndicators({name:'30 to 10 Players - Offset: '+ 0 +'px'});
+          var playersSceneHeight = $('#playersScene').height();
+
+          var playersTween = TweenMax.fromTo('#playersScene object', 0.2, {css:{transform: 'rotate(-5deg)'}}, {css:{transform: 'rotate(5deg)'},repeat: -1, yoyo: true}, 2);
+          var playersScene = new ScrollMagic.Scene({ triggerElement: '#playersScene', offset: 0})
+            .setClassToggle('body', 'playarsScene_active')
+            .setPin('#playersScene', {pushFollowers: false})
+            .setTween(playersTween)
+            .addTo(scrollController);
+          playersScene.duration(endZoneScene.scrollOffset()-playersScene.scrollOffset());
+          $(window).on('resize', function () {
+            playersScene.duration(endZoneScene.scrollOffset()-playersScene.scrollOffset());
+          });
+
+          // introScene.addIndicators({name:'Intro'});
+          // stadiumScene.addIndicators({name:'Stadium'});
+          // scoreboardScene.addIndicators({name:'Scoreboard'});
+          // fiftyYardScene.addIndicators({name:'Fifty Yard'});
+          // thirtyYardScene.addIndicators({name:'Thirty Yard'});
+          // thirtyYardPlayersScene.addIndicators({name:'50 to 30 Players'});
+          // tenYardScene.addIndicators({name:'Ten Yard'});
+          // tenYardPlayersScene.addIndicators({name:'30 to 10 Players'});
+          // chalkBoardScene.addIndicators({name:'Chalkboard Scene'});
+          // endZoneScene.addIndicators({name:'End Zone'});
+          // endZonePlayersScene.addIndicators({name:'End Zone Players'});
           //
-          //
-          // chalkBoardScene.addIndicators({name:'Chalkboard Scene - Offset: -'+ chalkBoardSceneHeight*2 +'px'});
-          // endZoneScene.addIndicators({name:'End Zone - Offset: '+ endZoneSceneHeight/4 +'px'});
+          // playersScene.addIndicators({name: 'Players'});
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

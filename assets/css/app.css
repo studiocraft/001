@@ -113,8 +113,18 @@ main .end-zone-scene {
   background-position: 0 0, 8rem 8rem; }
 main .field {
   background-color: #2bb673;
-  margin-top: -35%;
+  margin-top: -25%;
   overflow: hidden; }
+  main .field .animation-wrapper {
+    position: relative;
+    display: block;
+    height: 8rem; }
+    main .field .animation-wrapper .animation {
+      position: absolute;
+      top: 0;
+      left: 0; }
+      main .field .animation-wrapper .animation.flag {
+        opacity: 0; }
   main .field .yard-line {
     position: relative;
     border-top: 2rem solid #fff;

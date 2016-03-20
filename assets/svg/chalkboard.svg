@@ -6,11 +6,11 @@
     </radialGradient>
   </defs>
   <title>chalkboard</title>
+  <line x1="7.5" y1="241.15" x2="36.3" y2="241.15" style="fill: none;stroke: #231f20;stroke-miterlimit: 10;stroke-width: 15px"/>
+  <polyline points="7.5 678.66 7.5 219.16 7.5 241.16" style="fill: none;stroke: #a97c50;stroke-miterlimit: 10;stroke-width: 15px"/>
+  <line x1="842.1" y1="241.15" x2="819.02" y2="241.15" style="fill: none;stroke: #231f20;stroke-miterlimit: 10;stroke-width: 15px"/>
+  <polyline points="842.1 678.66 842.1 219.16 842.1 241.16" style="fill: none;stroke: #a97c50;stroke-miterlimit: 10;stroke-width: 15px"/>
   <g>
-    <line x1="7.5" y1="241.15" x2="36.3" y2="241.15" style="fill: none;stroke: #231f20;stroke-miterlimit: 10;stroke-width: 15px"/>
-    <polyline points="7.5 678.66 7.5 219.16 7.5 241.16" style="fill: none;stroke: #a97c50;stroke-miterlimit: 10;stroke-width: 15px"/>
-    <line x1="842.1" y1="241.15" x2="819.02" y2="241.15" style="fill: none;stroke: #231f20;stroke-miterlimit: 10;stroke-width: 15px"/>
-    <polyline points="842.1 678.66 842.1 219.16 842.1 241.16" style="fill: none;stroke: #a97c50;stroke-miterlimit: 10;stroke-width: 15px"/>
     <rect x="36.3" y="7.5" width="779.85" height="561.59" style="fill: url(#radial-gradient)"/>
     <text transform="translate(97.53 92.94)" style="font-size: 50px;fill: #fff;font-family: Montserrat;font-weight: 700"><tspan style="letter-spacing: 5px">Re</tspan><tspan x="76.7" y="0" style="letter-spacing: 4px">c</tspan><tspan x="109.5" y="0" style="letter-spacing: 5px">a</tspan><tspan x="144.85" y="0">p</tspan></text>
     <text transform="translate(97.53 128.94)" style="font-size: 30px;fill: #fff;font-family: Montserrat;font-weight: 700"><tspan style="letter-spacing: 1px">T</tspan><tspan x="20.7" y="0" style="letter-spacing: 3px">he </tspan><tspan x="75.03" y="0" style="letter-spacing: 2px">W</tspan><tspan x="111.09" y="0" style="letter-spacing: 3px">in</tspan><tspan x="147.15" y="0" style="letter-spacing: 2px">n</tspan><tspan x="170.46" y="0" style="letter-spacing: 3px">ing </tspan><tspan x="238.62" y="0" style="letter-spacing: 2px">P</tspan><tspan x="262.08" y="0" style="letter-spacing: 3px">l</tspan><tspan x="275.13" y="0" style="letter-spacing: 2px">a</tspan><tspan x="296.22" y="0">y</tspan></text>

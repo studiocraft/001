@@ -194,21 +194,7 @@ slug: home
   <div id="scoreboardScene" class="container scoreboard-scene">
     <div class="row">
       <div id="scoreboardAnimation" class="animation col-sm-9 col-md-push-1 col-md-7">
-        <svg id="Scoreboard" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 651.22 553.97">
-          <title>scoreboard</title>
-          <g id="SCROREBOARD">
-            <line x1="85.02" y1="447.78" x2="85.02" y2="536.47" style="fill: #231f20"/>
-            <line x1="85.02" y1="447.78" x2="85.02" y2="536.47" style="fill: none;stroke: #bcbec0;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 35px"/>
-            <line x1="562.49" y1="447.78" x2="562.49" y2="536.47" style="fill: #231f20"/>
-            <line x1="562.49" y1="447.78" x2="562.49" y2="536.47" style="fill: none;stroke: #bcbec0;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 35px"/>
-            <path d="M732.14,1285.22H110.48a9.78,9.78,0,0,0-9.78,9.78v422.71a9.78,9.78,0,0,0,9.78,9.78H732.14a9.78,9.78,0,0,0,9.78-9.78V1295a9.78,9.78,0,0,0-9.78-9.78" transform="translate(-95.7 -1279.73)" style="fill: #414042"/>
-            <rect x="5" y="5" width="641.22" height="442.28" rx="9.78" ry="9.78" style="fill: none;stroke: #a7a9ac;stroke-miterlimit: 10;stroke-width: 10px"/>
-            <rect x="37.44" y="36.17" width="579.13" height="68.46" style="fill: #231f20"/>
-            <text transform="translate(80.44 91.29)" style="font-size: 60px;fill: gold;font-family: Montserrat;font-weight: 700"><tspan style="letter-spacing: 6px">S</tspan><tspan x="45.3" y="0" style="letter-spacing: 5px">C</tspan><tspan x="92.04" y="0" style="letter-spacing: 6px">OREB</tspan><tspan x="291.84" y="0" style="letter-spacing: 4px">O</tspan><tspan x="344.76" y="0" style="letter-spacing: 6px">AR</tspan><tspan x="447.42" y="0">D</tspan></text>
-            <rect x="37.44" y="121.07" width="579.13" height="293.69" style="fill: #231f20"/>
-            <text transform="translate(80.54 164.08)" style="font-size: 22px;fill: #fff200;font-family: Montserrat;letter-spacing: 2px">We might all know the final score of <tspan x="0" y="26.4">Super Bowl 50, but that’s not to say </tspan><tspan x="0" y="52.8">there weren’t other winners coming </tspan><tspan x="0" y="79.2">out of the Big Game. Ipsos Connect </tspan><tspan x="0" y="105.6">took a look at 10 most buzzed about </tspan><tspan x="0" y="132">ads that aired Super Bowl Sunday, and </tspan><tspan x="0" y="158.4">uncovered just which ones had an </tspan><tspan x="0" y="184.8">impact with consumers - both during </tspan><tspan x="0" y="211.2">the game and the weeks after.</tspan></text>
-          </g>
-        </svg>
+        <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/scoreboard.svg" class="animation"></object>
       </div>
     </div>
   </div>
@@ -250,54 +236,74 @@ slug: home
     <div id="playersScene" class="container-fluid players-scene">
       <div class="text-center">
         <div class="col-xs-push-1 col-xs-1">
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/doritos.svg" id="doritosDogsOne" class="animation"></object>
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" data-name="flag" class="animation"></object>
-          <p><small><strong>Doritos</strong><br><small>"Dogs"</small></small></p>
+          <div class="animation-wrapper">
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/doritos.svg" id="doritosDogsOne" class="animation win"></object>
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" class="animation flag"></object>
+          </div>
+          <p class="title"><small><strong>Doritos</strong><br><small>"Dogs"</small></small></p>
         </div>
         <div class="col-xs-push-1 col-xs-1">
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/pantene.svg" data-foul-one="true" id="pantene" class="animation"></object>
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" data-name="flag" class="animation"></object>
-          <p><small><strong>Pantene</strong><br><small>"Dad'do"</small></small></p>
+          <div class="animation-wrapper">
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/pantene.svg" id="pantene" class="foulThirty lose animation"></object>
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" class="animation flag flagThirty"></object>
+          </div>
+          <p class="title titleLose"><small><strong>Pantene</strong><br><small>"Dad'do"</small></small></p>
         </div>
         <div class="col-xs-push-1 col-xs-1">
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/snickers.svg" id="snickers" class="animation"></object>
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" data-name="flag" class="animation"></object>
-          <p><small><strong>Snickers</strong><br><small>"Marilyn"</small></small></p>
+          <div class="animation-wrapper">
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/snickers.svg" id="snickers" class="foulTen lose animation"></object>
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" class="animation flag flagTen"></object>
+          </div>
+          <p class="title titleLose"><small><strong>Snickers</strong><br><small>"Marilyn"</small></small></p>
         </div>
         <div class="col-xs-push-1 col-xs-1">
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/mountain_dew.svg" id="mountainDew" class="animation"></object>
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" data-name="flag" class="animation"></object>
-          <p><small><strong>Mountain Dew Kick Start</strong><br><small>"Puppy Monkey Baby"</small></small></p>
+          <div class="animation-wrapper">
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/mountain_dew.svg" id="mountainDew" class="foulTen lose animation"></object>
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" class="animation flag flagTen"></object>
+          </div>
+          <p class="title titleLose"><small><strong>Mountain Dew Kick Start</strong><br><small>"Puppy Monkey Baby"</small></small></p>
         </div>
         <div class="col-xs-push-1 col-xs-1">
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/coca_cola.svg" data-foul-one="true" id="cocaCola" class="animation"></object>
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" data-name="flag" class="animation"></object>
-          <p><small><strong>Coca Cola</strong><br><small>"Mini Marvel"</small></small></p>
+          <div class="animation-wrapper">
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/coca_cola.svg" id="cocaCola" class="foulThirty win animation"></object>
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" class="animation flag flagThirty"></object>
+          </div>
+          <p class="title"><small><strong>Coca Cola</strong><br><small>"Mini Marvel"</small></small></p>
         </div>
         <div class="col-xs-push-1 col-xs-1">
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/doritos.svg" id="doritosUltrasound" class="animation"></object>
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" data-name="flag" class="animation"></object>
-          <p><small><strong>Doritos</strong><br><small>"Ultrasound"</small></small></p>
+          <div class="animation-wrapper">
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/doritos.svg" id="doritosUltrasound" class="win animation"></object>
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" class="animation flag"></object>
+          </div>
+          <p class="title"><small><strong>Doritos</strong><br><small>"Ultrasound"</small></small></p>
         </div>
         <div class="col-xs-push-1 col-xs-1">
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/heinz.svg" id="heinz" class="animation"></object>
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" data-name="flag" class="animation"></object>
-          <p><small><strong>Heinz</strong><br><small>"Weiner Stampede"</small></small></p>
+          <div class="animation-wrapper">
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/heinz.svg" id="heinz" class="win animation"></object>
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" class="animation flag"></object>
+          </div>
+          <p class="title"><small><strong>Heinz</strong><br><small>"Weiner Stampede"</small></small></p>
         </div>
         <div class="col-xs-push-1 col-xs-1">
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/colgate.svg" data-foul-one="true" id="colgate" class="animation"></object>
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" data-name="flag" class="animation"></object>
-          <p><small><strong>Colgate</strong><br><small>"Save Water"</small></small></p>
+          <div class="animation-wrapper">
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/colgate.svg" id="colgate" class="foulThirty lose animation"></object>
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" class="animation flag flagThirty"></object>
+          </div>
+          <p class="title titleLose"><small><strong>Colgate</strong><br><small>"Save Water"</small></small></p>
         </div>
         <div class="col-xs-push-1 col-xs-1">
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/jeep.svg" id="jeep" class="animation"></object>
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" data-name="flag" class="animation"></object>
-          <p><small><strong>Jeep</strong><br><small>"Portraits"</small></small></p>
+          <div class="animation-wrapper">
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/jeep.svg" id="jeep" class="win animation"></object>
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" class="animation flag"></object>
+          </div>
+          <p class="title"><small><strong>Jeep</strong><br><small>"Portraits"</small></small></p>
         </div>
         <div class="col-xs-push-1 col-xs-1">
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/budweiser.svg" id="bud" class="animation"></object>
-          <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" data-name="flag" class="animation"></object>
-          <p><small><strong>Budweiser</strong><br><small>"Simply Put"</small></small></p>
+          <div class="animation-wrapper">
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/budweiser.svg" id="bud" class="lose animation"></object>
+            <object type="image/svg+xml" data="{{ site.baseurl }}/assets/svg/flag.svg" class="animation flag"></object>
+          </div>
+          <p class="title titleLose"><small><strong>Budweiser</strong><br><small>"Simply Put"</small></small></p>
         </div>
       </div>
     </div>
