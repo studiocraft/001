@@ -15,6 +15,7 @@ body {}
 body {
   font-family: 'Montserrat', sans-serif;
   color: $white;
+  font-size: 16px;
   font-size: 1.6rem;
 }
 
@@ -25,8 +26,10 @@ img {
 }
 
 img.icon-logo {
+  padding-top: 60px;
   padding-top: 6rem;
   padding-bottom: 0;
+  width: 60px;
   width: 6rem;
 }
 
@@ -37,18 +40,23 @@ img.icon-logo {
   left: 0;
   width: 100%;
   height: 100%;
+  padding: 200px;
   padding: 20rem;
   color: $purple;
   background: $white;
 
   img.icon-logo {
+    width: 100px;
     width: 10rem;
+    padding-bottom: 40px;
     padding-bottom: 4rem;
   }
 }
 
 footer {
+  padding-top: 80px;
   padding-top: 8rem;
+  padding-bottom: 40px;
   padding-bottom: 4rem;
   background-color: $yellow;
   color: $purple;

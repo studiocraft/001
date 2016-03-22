@@ -158,18 +158,18 @@
             playersScene.duration(endZoneScene.scrollOffset()-playersScene.scrollOffset());
           });
 
-          introScene.addIndicators({name:'Introduction'});
-          stadiumScene.addIndicators({name:'Stadium Lights'});
-          scoreboardScene.addIndicators({name:'Scoreboard'});
-          fiftyYardScene.addIndicators({name:'Fifty Yard Line Intro'});
-          thirtyYardScene.addIndicators({name:'Thirty Yard Line Intro'});
-          thirtyYardPlayersScene.addIndicators({name:'50 to 30 Players'});
-          tenYardScene.addIndicators({name:'Ten Yard Line'});
-          tenYardPlayersScene.addIndicators({name:'30 to 10 Players'});
-          endZoneScene.addIndicators({name:'End Zone'});
-          endZonePlayersScene.addIndicators({name:'End Zone Players'});
-          chalkBoardScene.addIndicators({name:'Chalkboard Scene Rotate'});
-          playersScene.addIndicators({name: 'Players Pin Duration'});
+          // introScene.addIndicators({name:'Introduction'});
+          // stadiumScene.addIndicators({name:'Stadium Lights'});
+          // scoreboardScene.addIndicators({name:'Scoreboard'});
+          // fiftyYardScene.addIndicators({name:'Fifty Yard Line Intro'});
+          // thirtyYardScene.addIndicators({name:'Thirty Yard Line Intro'});
+          // thirtyYardPlayersScene.addIndicators({name:'50 to 30 Players'});
+          // tenYardScene.addIndicators({name:'Ten Yard Line'});
+          // tenYardPlayersScene.addIndicators({name:'30 to 10 Players'});
+          // endZoneScene.addIndicators({name:'End Zone'});
+          // endZonePlayersScene.addIndicators({name:'End Zone Players'});
+          // chalkBoardScene.addIndicators({name:'Chalkboard Scene Rotate'});
+          // playersScene.addIndicators({name: 'Players Pin Duration'});
 
       },
       finalize: function() {

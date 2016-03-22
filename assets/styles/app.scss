@@ -12,8 +12,10 @@ $purple: #2b3990;
 header {
   background-color: $blue;
   text-align: left;
+  padding-top: 20px;
   padding-top: 2rem;
   padding-right: 0;
+  padding-bottom: 20px;
   padding-bottom: 2rem;
   padding-left: 0;
   position: relative;
@@ -21,11 +23,14 @@ header {
 
   .logo {
     display: inline-block;
+    width: 360px;
     width: 36rem;
+    margin: 0 40px;
     margin: 0 4rem;
   }
 
   .intro-scene {
+    padding-bottom: 966px;
     padding-bottom: 96.6rem;
   }
 
@@ -36,6 +41,7 @@ main {
 
   .scroll-instructions {
     position: fixed;
+    bottom: 10px;
     bottom: 1rem;
     padding: 0;
     margin: 0;
@@ -44,10 +50,12 @@ main {
   }
 
   .stadium-scene {
+    margin-top: -96.6px;
     margin-top: -9.66rem;
   }
 
   .scoreboard-scene {
+    margin-bottom: 36.6px;
     margin-bottom: 3.66rem;
   }
 
@@ -61,13 +69,16 @@ main {
   }
 
   .players-scene {
+    padding-top: 66.6px;
     padding-top: 6.66rem;
   }
 
   .end-zone-field {
     background-image: linear-gradient(45deg, lighten($green, 5%) 25%, transparent 25%, transparent 75%, lighten($green, 5%) 75%, lighten($green, 5%)),
     linear-gradient(45deg, lighten($green, 5%) 25%, transparent 25%, transparent 75%, lighten($green, 5%) 75%, lighten($green, 5%));
+    background-size: 160px 160px;
     background-size: 16rem 16rem;
+    background-position: 0 0, 80px 80px;
     background-position: 0 0, 8rem 8rem;
   }
 
@@ -79,6 +90,7 @@ main {
     .animation-wrapper {
       position: relative;
       display: block;
+      height: 80px;
       height: 8rem;
 
       .animation {
@@ -94,18 +106,22 @@ main {
 
     .yard-line {
       position: relative;
+      border-top: 20px solid $white;
       border-top: 2rem solid $white;
       border-bottom: 0;
       margin: 0;
       color: $white;
       font-family: 'Ultra', serif;
+      letter-spacing: 10px;
       letter-spacing: 1rem;
+      font-size: 60px;
       font-size: 7rem;
       clear: both;
 
       &::before {
         position: absolute;
         right: 0;
+        top: 36.6px;
         top: 3.66rem;
         content: '';
         transform: rotate(-90deg);
@@ -143,12 +159,15 @@ main {
         float: left;
         display: block;
         content: '';
+        width: 15px;
         width: 1.5rem;
         margin-top: (970px / 4);
         margin-top: (175vh / 4);
+        border-top: 20px solid $white;
         border-top: 2rem solid $white;
         height: (970px / 4);
         height: (175vh / 4);
+        border-bottom: 20px solid $white;
         border-bottom: 2rem solid $white;
         margin-bottom: (970px / 4);
         margin-bottom: (175vh / 4);
@@ -159,10 +178,13 @@ main {
         float: left;
         display: block;
         content: '';
+        width: 15px;
         width: 1.5rem;
+        border-top: 20px solid $white;
         border-top: 2rem solid $white;
         height: (970px / 4);
         height: (175vh / 4);
+        border-bottom: 20px solid $white;
         border-bottom: 2rem solid $white;
         margin-bottom: (970px / 4);
         margin-bottom: (175vh / 4);
