@@ -32,6 +32,16 @@ header {
 }
 
 main {
+  position: relative;
+
+  .scroll-instructions {
+    position: fixed;
+    bottom: 1rem;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    right: 0;
+  }
 
   .stadium-scene {
     margin-top: -9.66rem;
@@ -44,14 +54,17 @@ main {
   .thirty-yard-scene,
   .ten-yard-scene {
     position: absolute;
-    bottom: 0;
+    bottom: (-970px / 4);
+    bottom: (-175vh / 4);
+    left: 0;
+    right: 0;
   }
 
   .players-scene {
-    margin-top: 6.66rem;
+    padding-top: 6.66rem;
   }
 
-  .end-zone-scene {
+  .end-zone-field {
     background-image: linear-gradient(45deg, lighten($green, 5%) 25%, transparent 25%, transparent 75%, lighten($green, 5%) 75%, lighten($green, 5%)),
     linear-gradient(45deg, lighten($green, 5%) 25%, transparent 25%, transparent 75%, lighten($green, 5%) 75%, lighten($green, 5%));
     background-size: 16rem 16rem;
@@ -118,8 +131,8 @@ main {
 
     .hash-line {
       position: relative;
-      height: 1940px;
-      height: 250vh;
+      height: 970px;
+      height: 175vh;
       width: 100%;
       width: 100vw;
       border-top: 0;
@@ -131,14 +144,14 @@ main {
         display: block;
         content: '';
         width: 1.5rem;
-        margin-top: (1940px / 5);
-        margin-top: (250vh / 5);
+        margin-top: (970px / 4);
+        margin-top: (175vh / 4);
         border-top: 2rem solid $white;
-        height: (1940px / 5);
-        height: (250vh / 5);
+        height: (970px / 4);
+        height: (175vh / 4);
         border-bottom: 2rem solid $white;
-        margin-bottom: (1940px / 5);
-        margin-bottom: (250vh / 5);
+        margin-bottom: (970px / 4);
+        margin-bottom: (175vh / 4);
         clear: both;
       }
 
@@ -148,11 +161,11 @@ main {
         content: '';
         width: 1.5rem;
         border-top: 2rem solid $white;
-        height: (1940px / 5);
-        height: (250vh / 5);
+        height: (970px / 4);
+        height: (175vh / 4);
         border-bottom: 2rem solid $white;
-        margin-bottom: (1940px / 5);
-        margin-bottom: (250vh / 5);
+        margin-bottom: (970px / 4);
+        margin-bottom: (175vh / 4);
         box-sizing: content-box;
         clear: both;
       }

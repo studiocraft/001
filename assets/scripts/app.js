@@ -20,6 +20,7 @@
       init: function() {
         // JavaScript to be fired on all pages
           window.onload = function () {
+          document.body.scrollTop = document.documentElement.scrollTop = 0;
           var windowElement = $('html');
           var bodyElement = $('body');
           var loaderOverlay = document.getElementById('loaderOverlay');
@@ -38,8 +39,9 @@
           titleTextTween.staggerFromTo('#intro > #letters > path', 0.4, {opacity: 0}, {opacity: 1}, 0.2);
 
           var introTextTween = new TimelineMax();
-          introTextTween.fromTo('#ball', 0.8, {scale: 0, opacity: 0}, {scale: 1, opacity: 1})
-          .fromTo('#subTitle', 0.2, {opacity: 0}, {opacity: 1});
+          introTextTween.to('#killMe', 0.8, {scale: 0, opacity: 0, display: 'none'})
+          .fromTo('#ball', 0.6, {scale: 0, opacity: 0}, {scale: 1, opacity: 1}, 'ball')
+          .fromTo('#subTitle', 0.4, {opacity: 0}, {opacity: 1}, 'ball');
           var introScene = new ScrollMagic.Scene({triggerElement: '#introScene', offset: introSceneHeight/2, duration: introSceneHeight/2})
             .setClassToggle('body', 'introTextScene_active')
             .setPin('#introScene', {pushFollowers: true})
@@ -62,9 +64,9 @@
 
           var fiftyYardSceneHeight = $('#fiftyYardScene').height();
           var fiftyYardTween = new TimelineMax();
-          fiftyYardTween.fromTo('#fiftyYardTextAnimation', 0.8, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
-            .fromTo('#voiceGuyAnimation', 0.4, { css:{transform: 'translateX(100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
-            .staggerFromTo('[data-name="comment"]', 0.8, {css:{fill: 'transparent'}}, {css:{fill: '#ffffff'}, repeat: 0 }, 0.2);
+          fiftyYardTween.fromTo('#fiftyYardTextAnimation', 0.6, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}}, 'content')
+            .fromTo('#voiceGuyAnimation', 0.6, { css:{transform: 'translateX(100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}}, 'content')
+            .staggerFromTo('[data-name="comment"]', 0.4, {css:{fill: 'transparent'}}, {css:{fill: '#ffffff'}}, 0.2);
           var fiftyYardScene = new ScrollMagic.Scene({ triggerElement: '#fiftyYardScene', offset: 0})
             .setClassToggle('body', 'fiftyYardScene_active')
             .setTween(fiftyYardTween)
@@ -73,40 +75,42 @@
           var thirtyYardSceneHeight = $('#thirtyYardScene').height();
           var thirtyYardTween = new TimelineMax();
           thirtyYardTween.to('#playersScene', 0.4, {opacity: 0.25})
-            .fromTo('#thirtyYardTextAnimation', 0.4, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
-            .fromTo('#brainGuyAnimation', 0.4, { css:{transform: 'translateX(100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
-            .staggerFromTo('[data-name="lightbulb"]', 0.2, {css:{opacity: '0'}}, {css:{opacity: '1'}, repeat: 0 }, 0.1);
+            .fromTo('#thirtyYardTextAnimation', 0.4, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}}, 'content')
+            .fromTo('#brainGuyAnimation', 0.4, { css:{transform: 'translateX(100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}}, 'content')
+            .staggerFromTo('[data-name="lightbulb"]', 0.2, {opacity: '0'}, {opacity: '1'}, 0.1)
+            .to('.foulThirty', 0.4, {opacity: 0, scale: 0}, 'foul')
+            .to('.flagThirty', 0.4, {opacity: 1, scale: 1}, 'foul');
           var thirtyYardScene = new ScrollMagic.Scene({ triggerElement: '#thirtyYardScene', offset: -thirtyYardSceneHeight/2})
             .setClassToggle('body', 'thirtyYardScene_active')
             .setTween(thirtyYardTween)
             .addTo(scrollController);
 
           var thirtyYardPlayersTween = new TimelineMax();
-          thirtyYardPlayersTween.to('#playersScene', 0.4, {opacity: 1})
-            .to('.foulThirty', 1, {opacity: 0, scale: 0}, 'foul')
-            .fromTo('.flagThirty', 1, {opacity: 0, scale: 0}, {opacity: 1, scale: 1}, 'foul');
+          thirtyYardPlayersTween.to('#playersScene', 0.4, {opacity: 1});
           var thirtyYardPlayersScene = new ScrollMagic.Scene({ triggerElement: '#thirtyYardScene', offset: thirtyYardSceneHeight*1.2})
             .setClassToggle('body', 'thirtyYardPlayersPin_active')
             .setTween(thirtyYardPlayersTween)
             .addTo(scrollController);
 
           var tenYardSceneHeight = $('#tenYardScene').height();
+
           var tenYardTween = new TimelineMax();
+          var heartTween = new TimelineMax();
+          heartTween.fromTo('[data-name="heart"]', 0.4, {css:{strokeWidth: '1rem', stroke: '#FF4338'}}, {css:{strokeWidth: '0', stroke: '#FF4338'}, repeat:-1, yoyo: true });
           tenYardTween.to('#playersScene', 0.4, {opacity: 0.25})
-            .to('.flagThirty', 1, {opacity: 0, scale: 0}, 'reset')
-            .to('.foulThirty', 1, {opacity: 1, scale: 1}, 'reset')
-            .fromTo('#tenYardTextAnimation', 0.8, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
-            .fromTo('#heartGuyAnimation', 0.8, { css:{transform: 'translateX(100px)', opacity: 0}}, {css:{transform: 'translateX(0px)', opacity: 1}})
-            .fromTo('[data-name="heart"]', 0.6, {css:{strokeWidth: '1rem', stroke: '#FF4338'}}, {css:{strokeWidth: '0', stroke: '#FF4338'}, repeat: -1, yoyo: true }, 1);
-          var tenYardScene = new ScrollMagic.Scene({ triggerElement: '#tenYardScene', offset: 0})
+            .to('.flagThirty', 0.4, {opacity: 0, scale: 0}, 'reset')
+            .to('.foulThirty', 0.4, {opacity: 1, scale: 1}, 'reset')
+            .fromTo('#tenYardTextAnimation', 0.4, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}}, 'content')
+            .fromTo('#heartGuyAnimation', 0.4, { css:{transform: 'translateX(100px)', opacity: 0}}, {css:{transform: 'translateX(0px)', opacity: 1}}, 'content')
+            .to('.foulTen', 0.4, {opacity: 0, scale: 0}, 'foul')
+            .to('.flagTen', 0.4, {opacity: 1, scale: 1}, 'foul');
+          var tenYardScene = new ScrollMagic.Scene({ triggerElement: '#tenYardScene', offset: -tenYardSceneHeight/2, tweenChanges: true})
             .setClassToggle('body', 'tenYardScene_active')
             .setTween(tenYardTween)
             .addTo(scrollController);
 
           var tenYardPlayersTween = new TimelineMax();
-          tenYardPlayersTween.to('#playersScene', 0.4, {opacity: 1})
-          .to('.foulTen', 1, {opacity: 0, scale: 0}, 'foul')
-          .fromTo('.flagTen', 1, {opacity: 0, scale: 0}, {opacity: 1, scale: 1}, 'foul');
+          tenYardPlayersTween.to('#playersScene', 0.4, {opacity: 1});
           var tenYardPlayersScene = new ScrollMagic.Scene({ triggerElement: '#tenYardScene', offset: tenYardSceneHeight*1.2})
             .setClassToggle('body', 'tenYardPlayersPin_active')
             .setTween(tenYardPlayersTween)
@@ -114,33 +118,24 @@
 
           var endZoneSceneHeight = $('#endZoneScene').height();
           var endZoneTween = new TimelineMax();
-          endZoneTween.fromTo('#endZoneTextAnimation', 0.8, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
-            .fromTo('#goalPostAnimation', 0.8, {css:{transform: 'translateY(240px)', opacity: 0}}, {css:{transform: 'translateY(0)', opacity: 1}});
-          var endZoneScene = new ScrollMagic.Scene({ triggerElement: '#endZoneScene', offset: endZoneSceneHeight/4})
-            .on("start", function (e) {
-              var eventTween = new TimelineMax();
-              eventTween.to('#playersScene', 0.4, {opacity: 1})
-              .to('.lose', 1, {opacity: 0}, 'disappear')
-              .to('.titleLose', 1, { opacity: 0}, 'disappear');
-            })
-            .on("leave", function (e) {
-              var eventTween = new TimelineMax();
-              eventTween.to('#playersScene', 0.4, {opacity: 0.25})
-              .to('.lose', 1, {opacity: 1}, 'show')
-              .to('.titleLose', 1, { opacity: 1}, 'show');
-            })
+          endZoneTween.to('#playersScene', 0.4, {opacity: 1})
+            .fromTo('#endZoneTextAnimation', 0.4, {css:{transform: 'translateX(-100px)', opacity: 0}}, {css:{transform: 'translateX(0)', opacity: 1}})
+            .to('.lose', 0.4, {opacity: 0}, 'loser')
+            .to('.titleLose', 0.4, { opacity: 0}, 'loser')
+            .fromTo('#goalPostAnimation', 0.4, {css:{transform: 'translateY(240px)', opacity: 0}}, {css:{transform: 'translateY(0)', opacity: 1}});
+          var endZoneScene = new ScrollMagic.Scene({ triggerElement: '#endZoneScene', offset: endZoneSceneHeight*1.2})
             .setClassToggle('body', 'endZoneScene_active')
             .setTween(endZoneTween)
             .addTo(scrollController);
 
-            var endZonePlayersTween = new TimelineMax();
-            endZonePlayersTween.to('#playersScene', 0.4, {opacity: 0.25})
-              .to('.flagTen', 1, {opacity: 0, scale: 0}, 'reset')
-              .to('.foulTen', 1, {opacity: 1, scale: 1}, 'reset');
-            var endZonePlayersScene = new ScrollMagic.Scene({ triggerElement: '#endZoneScene', offset: -endZoneSceneHeight/4})
-              .setClassToggle('body', 'endZoneReset_active')
-              .setTween(endZonePlayersTween)
-              .addTo(scrollController);
+          var endZonePlayersTween = new TimelineMax();
+          endZonePlayersTween.to('#playersScene', 0.4, {opacity: 0.25})
+            .to('.flagTen', 1, {opacity: 0, scale: 0}, 'reset')
+            .to('.foulTen', 1, {opacity: 1, scale: 1}, 'reset');
+          var endZonePlayersScene = new ScrollMagic.Scene({ triggerElement: '#endZoneScene', offset: -endZoneSceneHeight*1.2})
+            .setClassToggle('body', 'endZoneReset_active')
+            .setTween(endZonePlayersTween)
+            .addTo(scrollController);
 
           var chalkBoardSceneHeight = $('#chalkBoardScene').height();
           var chalkBoardTween = new TimelineMax();
@@ -163,19 +158,18 @@
             playersScene.duration(endZoneScene.scrollOffset()-playersScene.scrollOffset());
           });
 
-          // introScene.addIndicators({name:'Intro'});
-          // stadiumScene.addIndicators({name:'Stadium'});
-          // scoreboardScene.addIndicators({name:'Scoreboard'});
-          // fiftyYardScene.addIndicators({name:'Fifty Yard'});
-          // thirtyYardScene.addIndicators({name:'Thirty Yard'});
-          // thirtyYardPlayersScene.addIndicators({name:'50 to 30 Players'});
-          // tenYardScene.addIndicators({name:'Ten Yard'});
-          // tenYardPlayersScene.addIndicators({name:'30 to 10 Players'});
-          // chalkBoardScene.addIndicators({name:'Chalkboard Scene'});
-          // endZoneScene.addIndicators({name:'End Zone'});
-          // endZonePlayersScene.addIndicators({name:'End Zone Players'});
-          //
-          // playersScene.addIndicators({name: 'Players'});
+          introScene.addIndicators({name:'Introduction'});
+          stadiumScene.addIndicators({name:'Stadium Lights'});
+          scoreboardScene.addIndicators({name:'Scoreboard'});
+          fiftyYardScene.addIndicators({name:'Fifty Yard Line Intro'});
+          thirtyYardScene.addIndicators({name:'Thirty Yard Line Intro'});
+          thirtyYardPlayersScene.addIndicators({name:'50 to 30 Players'});
+          tenYardScene.addIndicators({name:'Ten Yard Line'});
+          tenYardPlayersScene.addIndicators({name:'30 to 10 Players'});
+          endZoneScene.addIndicators({name:'End Zone'});
+          endZonePlayersScene.addIndicators({name:'End Zone Players'});
+          chalkBoardScene.addIndicators({name:'Chalkboard Scene Rotate'});
+          playersScene.addIndicators({name: 'Players Pin Duration'});
 
       },
       finalize: function() {
@@ -190,7 +184,9 @@
 
       },
       finalize: function() {
-
+        window.onbeforeunload = function() {
+          window.scrollTo(0,0);
+        };
       }
     },
   };
